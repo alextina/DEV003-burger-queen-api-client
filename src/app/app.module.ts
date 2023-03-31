@@ -12,17 +12,26 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { MenuComponent } from './menu/menu.component';
 import { AdminComponent } from './admin/admin.component';
-import { UpdatepopupComponent } from './updatepopup/updatepopup.component';
+import { UpdatepopupComponent } from './updatepopup/updatepopup.component'
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, MenuComponent, AdminComponent, UpdatepopupComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    RegisterComponent,
+    MenuComponent,
+    AdminComponent,
+    UpdatepopupComponent
+  ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
     ReactiveFormsModule,
-    ToastrModule.forRoot(),
+    HttpClientModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],
