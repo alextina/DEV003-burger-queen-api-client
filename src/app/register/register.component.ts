@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms'
-import { ToastrService } from 'ngx-toastr'
+import { FormBuilder, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../service/auth.service';
 import { Router } from '@angular/router';
 
@@ -11,10 +11,12 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent {
 
-  constructor(private builder: FormBuilder, private toastr: ToastrService,
-    private service: AuthService, private router: Router) {
-
-  }
+  constructor(
+    private builder: FormBuilder,
+    private toastr: ToastrService,
+    private service: AuthService,
+    private router: Router
+    ) {}
 
   registerform = this.builder.group({
     id: this.builder.control('', Validators.compose([Validators.required, Validators.minLength(5)])),
@@ -28,13 +30,17 @@ export class RegisterComponent {
 
   continueRegistration() {
     if (this.registerform.valid) {
-      this.service.ContinueRegister(this.registerform.value).subscribe(resp => {
-        this.toastr.success('Please contact admin for enable access', 'Registered Successfully');
-        this.router.navigate(['login']);
-      });
+      this.service
+        .ContinueRegister(this.registerform.value)
+        .subscribe((res) => {
+          this.toastr.success(
+            'Please contact admin for enable access',
+            'Registered Successfuly'
+          );
+          this.router.navigate(['login']);
+        });
     } else {
       this.toastr.warning('Please enter valid data');
     }
   }
-
 }

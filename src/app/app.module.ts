@@ -23,6 +23,7 @@ import { UpdatepopupComponent } from './updatepopup/updatepopup.component'
     AdminComponent,
     UpdatepopupComponent
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -33,6 +34,6 @@ import { UpdatepopupComponent } from './updatepopup/updatepopup.component'
     ToastrModule.forRoot()
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
