@@ -37,7 +37,7 @@ export class RegisterComponent {
             'Please contact admin for enable access',
             'Registered Successfuly'
           );
-          this.router.navigate(['login']);
+          this.router.navigate(['']);
         });
     } else {
       this.toastr.warning('Please enter valid data');

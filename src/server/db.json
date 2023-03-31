@@ -1,5 +1,22 @@
 {
-    "user": [
-        
-    ]
+  "user": [
+    {
+      "id": "adminAle",
+      "name": "AdminAle",
+      "password": "Hola.123",
+      "email": "castilloavilaa@gmail.com",
+      "gender": "female",
+      "role": "",
+      "isactive": true
+    },
+    {
+      "id": "adminMari",
+      "name": "AdminMari",
+      "password": "Hola.123",
+      "email": "marilucornelio17@gmail.com",
+      "gender": "female",
+      "role": "",
+      "isactive": true
+    }
+  ]
 }
