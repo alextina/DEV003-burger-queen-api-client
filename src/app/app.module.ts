@@ -12,7 +12,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { MenuComponent } from './menu/menu.component';
 import { AdminComponent } from './admin/admin.component';
-import { UpdatepopupComponent } from './updatepopup/updatepopup.component'
+import { UpdatepopupComponent } from './updatepopup/updatepopup.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { UpdatepopupComponent } from './updatepopup/updatepopup.component'
     RegisterComponent,
     MenuComponent,
     AdminComponent,
-    UpdatepopupComponent
+    UpdatepopupComponent,
   ],
 
   imports: [
@@ -31,7 +32,8 @@ import { UpdatepopupComponent } from './updatepopup/updatepopup.component'
     MaterialModule,
     ReactiveFormsModule,
     HttpClientModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

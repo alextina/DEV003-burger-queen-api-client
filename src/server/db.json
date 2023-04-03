@@ -1,22 +1,19 @@
 {
-  "user": [
+  "users": [
     {
-      "id": "adminAle",
-      "name": "AdminAle",
-      "password": "Hola.123",
+      "id": 1,
       "email": "castilloavilaa@gmail.com",
-      "gender": "female",
-      "role": "",
-      "isactive": true
+      "password": "$2a$06$T9oEonPy4u7SjWQb4kWfYOB3PggjmAZSb4Iy1YxtTee0Y1fwDNMdm"
     },
     {
-      "id": "adminMari",
-      "name": "AdminMari",
-      "password": "Hola.123",
+      "id": 2,
       "email": "marilucornelio17@gmail.com",
-      "gender": "female",
-      "role": "",
-      "isactive": true
+      "password": "$2a$06$T9oEonPy4u7SjWQb4kWfYOB3PggjmAZSb4Iy1YxtTee0Y1fwDNMdm"
+    },
+    {
+      "id": 3,
+      "email": "admin@gmail.com",
+      "password": "$2a$06$2jlRYanAuWQRfvTsCXRoyeQNVk5aDk4RYdTVz7ppPdKxaXQQchFMa"
     }
   ]
 }

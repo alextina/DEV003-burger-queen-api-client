@@ -1,24 +1,31 @@
 <mat-card>
-    <mat-card-header>
-        <h1>User Login</h1>
-    </mat-card-header>
+  <mat-card-header>
+    <h1>User Login</h1>
+  </mat-card-header>
 
-    <mat-card-content>
+  <mat-card-content>
+    <form class="example-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email">
+        <mat-error *ngIf="loginForm.controls['email'].hasError('email')">
+          Please enter a valid email address.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <mat-icon class="material-icons-outlined icon-eye" (click)="togglePassword()">{{ hide ? 'visibility_off'
+          :'visibility'}}
+        </mat-icon>
+        <input [type]="hide ? 'password' : 'text'" matInput formControlName="password">
+        <mat-error *ngIf="loginForm.controls['password'].hasError('minlength')">
+          Password must be at least 6 characters long.
+        </mat-error>
+      </mat-form-field>
+      <div>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">Submit</button>
+      </div>
+    </form>
 
-        <form class="example-form" [formGroup]="loginform" (ngSubmit)="continueLogin()">
-            <mat-form-field class="example-full-width">
-                <mat-label>User Name</mat-label>
-                <input matInput formControlName="username">
-            </mat-form-field>
-            <mat-form-field class="example-full-width">
-                <mat-label>Password</mat-label>
-                <input type="password" matInput formControlName="password">
-            </mat-form-field>
-            <div>
-                <button mat-raised-button color="primary">Submit</button>
-                <a routerLink="/register" mat-raised-button color="accent">New User?</a>
-            </div>
-        </form>
-
-    </mat-card-content>
+  </mat-card-content>
 </mat-card>
