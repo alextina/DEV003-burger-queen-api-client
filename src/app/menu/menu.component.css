@@ -1,0 +1,38 @@
+.container-menu {
+    margin: auto;
+    height: 100%;
+}
+
+header {
+    height: 290px;
+    width: 100%;
+    background-image: linear-gradient(rgba(30, 30, 30, 0.25), rgba(30, 30, 30, 0.75)), url('../../assets/burgers-login.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: self-end;
+    justify-content: center;
+}
+
+header h1 {
+    color: var(--main-light-color);
+    font-weight: 900;
+    padding: 20px;
+    text-align: center;
+    font-size: 75px;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+    padding: 25px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.material-icons {
+    color: var(--main-light-color);
+    font-size: 50px;
+}

@@ -15,5 +15,103 @@
       "email": "admin@gmail.com",
       "password": "$2a$06$2jlRYanAuWQRfvTsCXRoyeQNVk5aDk4RYdTVz7ppPdKxaXQQchFMa"
     }
+  ],
+  "products" : [
+    {
+      "_id": 1,
+      "name": "American Coffe",
+      "price": "$ 5",
+      "image": "#",
+      "type": "breakfast",
+      "dateEntry": "04/04/23"
+    },
+    {
+      "_id": 2,
+      "name": "Coffee with Milk",
+      "price": "$ 7",
+      "image": "#",
+      "type": "breakfast",
+      "dateEntry": "04/04/23"
+    },
+    {
+      "_id": 3,
+      "name": "Ham and Cheese sandwish",
+      "price": "$ 10",
+      "image": "#",
+      "type": "breakfast",
+      "dateEntry": "04/04/23"
+    },
+    {
+      "_id": 4,
+      "name": "Natural fruit juice",
+      "price": "$ 7",
+      "image": "#",
+      "type": "breakfast",
+      "dateEntry": "04/04/23"
+    },
+    {
+      "_id": 5,
+      "name": "Plain Burger",
+      "price": "$ 10",
+      "image": "#",
+      "type": "lunch",
+      "dateEntry": "04/04/23"
+    },
+    {
+      "_id": 6,
+      "name": "Double Burger",
+      "price": "$ 15",
+      "image": "#",
+      "type": "lunch",
+      "dateEntry": "04/04/23"
+    },
+    {
+      "_id": 7,
+      "name": "French Fries",
+      "price": "$ 5",
+      "image": "#",
+      "type": "lunch",
+      "dateEntry": "04/04/23"
+    },
+    {
+      "_id": 8,
+      "name": "Onion Rings",
+      "price": "$ 5",
+      "image": "#",
+      "type": "lunch",
+      "dateEntry": "04/04/23"
+    },
+    {
+      "_id": 9,
+      "name": "Water 500 ml",
+      "price": "$ 5",
+      "image": "#",
+      "type": "lunch",
+      "dateEntry": "04/04/23"
+    },
+    {
+      "_id": 10,
+      "name": "Water 750 ml",
+      "price": "$ 7",
+      "image": "#",
+      "type": "lunch",
+      "dateEntry": "04/04/23"
+    },
+    {
+      "_id": 11,
+      "name": "Drink/Soda 500 ml",
+      "price": "$ 7",
+      "image": "#",
+      "type": "lunch",
+      "dateEntry": "04/04/23"
+    },
+    {
+      "_id": 12,
+      "name": "Drink/Soda 750 ml",
+      "price": "$ 10",
+      "image": "#",
+      "type": "lunch",
+      "dateEntry": "04/04/23"
+    }     
   ]
 }

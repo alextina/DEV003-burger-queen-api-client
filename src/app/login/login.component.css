@@ -1,4 +1,97 @@
-.icon-eye {
-  position: absolute;
-  right: 0;
+.container {
+  margin: auto;
+  height: 100%;
+}
+
+section,
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+article {
+  width: 100%;
+}
+
+header {
+  width: 20%;
+}
+
+.logo {
+  max-width: 100%;
+}
+
+.input-form {
+  background-color: var(--main-light-color);
+  border-radius: 100px;
+  width: 100%;
+  height: 75px;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+input {
+  width: 100%;
+}
+
+.eye-icon {
+  cursor: pointer;
+}
+
+.error {
+  color: var(--error-color);
+  width: 100%;
+  margin-top: 10px;
+  padding-left: 15px;
+  font-weight: 400;
+}
+
+button {
+  color: var(--main-dark-color);
+  font-weight: 800;
+  background-color: var(--main-color);
+  width: 200px;
+  height: 75px;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.background-image {
+  display: none;
+}
+
+@media (min-width: 1194px) {
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+  }
+
+  section {
+    width: 100%;
+  }
+
+
+
+  header {
+    width: 25%;
+  }
+
+  .background-image {
+    height: 100%;
+    display: block;
+    background-image: url('../../assets/burgers-login.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
 }
