@@ -1,31 +1,37 @@
-<mat-card>
-  <mat-card-header>
-    <h1>User Login</h1>
-  </mat-card-header>
+<section class="container">
 
-  <mat-card-content>
-    <form class="example-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <mat-form-field class="example-full-width">
-        <mat-label>Email</mat-label>
-        <input matInput formControlName="email">
-        <mat-error *ngIf="loginForm.controls['email'].hasError('email')">
-          Please enter a valid email address.
-        </mat-error>
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <mat-label>Password</mat-label>
-        <mat-icon class="material-icons-outlined icon-eye" (click)="togglePassword()">{{ hide ? 'visibility_off'
-          :'visibility'}}
-        </mat-icon>
-        <input [type]="hide ? 'password' : 'text'" matInput formControlName="password">
-        <mat-error *ngIf="loginForm.controls['password'].hasError('minlength')">
-          Password must be at least 6 characters long.
-        </mat-error>
-      </mat-form-field>
-      <div>
-        <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">Submit</button>
-      </div>
-    </form>
+  <section class="background-image"></section>
+  <section>
+    <header>
+      <img class="logo" src="../../assets/Logo-Burger-Queen.png" alt="burger-queen-logo">
+    </header>
 
-  </mat-card-content>
-</mat-card>
+    <section class="section-form">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <article>
+          <div class="input-form">
+            <span class="material-icons mail-icon">mail_outline</span>
+            <input formControlName="email" placeholder="Email">
+          </div>
+          <div class="error" *ngIf="loginForm.controls['email'].hasError('email')">
+            Please enter a valid email address.
+          </div>
+        </article>
+        <article>
+          <div class="input-form">
+            <span class="material-icons mail-icon">lock_outline </span>
+            <input [type]="hide ? 'password' : 'text'" matInput formControlName="password" placeholder="Password">
+            <span class="material-icons eye-icon" (click)="togglePassword()">{{ hide ? 'visibility_off'
+              :'visibility'}}
+            </span>
+          </div>
+          <div class="error" *ngIf="loginForm.controls['password'].hasError('minlength')">
+            Password must be at least 6 characters long.
+          </div>
+        </article>
+        <button type="submit" [disabled]="!loginForm.valid">Submit</button>
+      </form>
+    </section>
+  </section>
+
+</section>
