@@ -27,10 +27,4 @@ export class MenuComponent implements OnInit {
       },
     });
   }
-  // loadMenu(): void {
-  //   this.service.getProducts().subscribe((res) => {
-  //     this.products = res;
-  //     console.log(res);
-  //   });
-  // }
 }

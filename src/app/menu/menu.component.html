@@ -9,8 +9,10 @@
   </header>
   <section class="container-products">
     <article *ngFor="let product of products" class="product">
-      <div>{{product.name}}</div>
-      <div>{{product.price}}</div>
+      <img src="{{product.image}}">
+      <h3>{{product.name}}</h3>
+      <h3>$ {{product.price}}</h3>
+      <button>Add</button>
     </article>
   </section>
 </section>
