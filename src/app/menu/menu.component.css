@@ -1,16 +1,7 @@
-.container-menu {
-  margin: auto;
-  height: 100%;
-}
-
 header {
   height: 290px;
   width: 100%;
-  background-image: linear-gradient(
-      rgba(30, 30, 30, 0.25),
-      rgba(30, 30, 30, 0.75)
-    ),
-    url("../../assets/burgers-login.jpg");
+  background-image: linear-gradient(rgba(30, 30, 30, 0.25), rgba(30, 30, 30, 0.75)), url("../../assets/burgers-login.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -31,6 +22,9 @@ nav {
   display: flex;
   gap: 25px;
   padding: 25px;
+}
+
+header nav {
   position: absolute;
   top: 0;
   right: 0;
@@ -40,19 +34,40 @@ nav {
   color: var(--main-light-color);
   font-size: 50px;
 }
+
 /* ************************************************************* */
 /* products */
+
 .container-products {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 800px;
-  flex-wrap: wrap;
+  width: 90%;
   margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50px;
 }
+
 .product {
-  background-color: aquamarine;
-  width: 200px;
-  max-width: 250px;
+  background-color: var(--second-dark-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 30%;
+  min-height: 450px;
   margin: 10px;
+  padding: 30px;
+  border-radius: 15px;
+}
+
+.product img {
+  width: 200px;
+  height: auto;
+  border-radius: 15px;
+}
+
+.product h3 {
+  color: var(--main-light-color);
+  text-align: center;
 }
