@@ -11,7 +11,7 @@
     <article *ngFor="let product of products" class="product">
       <img src="{{product.image}}">
       <h3>{{product.name}}</h3>
-      <h3>$ {{product.price}}</h3>
+      <h3>{{product.price | currency}}</h3>
       <button>Add</button>
     </article>
   </section>
