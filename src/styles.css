@@ -1,62 +1,61 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-size: 24px;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 600;
-    outline: none;
-    border: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 24px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  outline: none;
+  border: none;
 }
 
 html,
 body {
-    height: 100%;
+  height: 100%;
 }
 
 :root {
-    --main-color: rgb(250, 150, 5);
-    --accent-color: rgb(160, 100, 0);
-    --main-dark-color: rgb(30, 30, 30);
-    --second-dark-color: rgb(40, 40, 40);
-    --main-light-color: rgb(255, 255, 255);
-    --error-color: rgba(250, 90, 90, 0.75);
+  --main-color: rgb(250, 150, 5);
+  --accent-color: rgb(160, 100, 0);
+  --main-dark-color: rgb(30, 30, 30);
+  --second-dark-color: rgb(40, 40, 40);
+  --main-light-color: rgb(255, 255, 255);
+  --error-color: rgba(250, 90, 90, 0.75);
 }
 
 body {
-    background-color: var(--main-dark-color);
+  background-color: var(--main-dark-color);
 }
 
 .container {
-    margin: auto;
-    height: 100%;
+  margin: auto;
+  height: 100%;
 }
 
 button {
-    font-weight: 800;
-    text-align: center;
-    padding: 15px 30px 15px 30px;
-    cursor: pointer;
-    transition-duration: 0.2s;
-    border-radius: 25px;
-    margin-top: auto;
-    margin-bottom: 0;
+  font-weight: 800;
+  text-align: center;
+  padding: 15px 30px 15px 30px;
+  cursor: pointer;
+  transition-duration: 0.2s;
+  border-radius: 25px;
+  margin-bottom: 0;
 }
 
 nav {
-    display: flex;
-    gap: 25px;
-    padding: 25px;
+  display: flex;
+  gap: 25px;
+  padding: 25px;
 }
 
 .input-form {
-    background-color: var(--main-light-color);
-    border-radius: 25px;
-    height: 75px;
-    padding: 15px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 15px;
+  background-color: var(--main-light-color);
+  border-radius: 25px;
+  height: 75px;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
 }

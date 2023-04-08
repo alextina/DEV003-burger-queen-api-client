@@ -18,7 +18,6 @@ import { UpdatepopupComponent } from './updatepopup/updatepopup.component';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    MenuComponent,
     AdminComponent,
     UpdatepopupComponent,
   ],
