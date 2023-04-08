@@ -8,7 +8,10 @@ import { AdminComponent } from './admin/admin.component';
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'menu', component: MenuComponent },
+  {
+    path: 'menu',
+    loadChildren: () => import('./menu/menu.module').then((m) => m.MenuModule),
+  },
   { path: 'admin', component: AdminComponent },
 ];
 
