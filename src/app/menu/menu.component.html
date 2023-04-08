@@ -1,18 +1,29 @@
-<section class="container-menu">
-  <header class="image-menu">
+<section>
+  <header>
     <nav>
-      <span class="material-icons">notifications</span>
-      <span class="material-icons">restaurant_menu</span>
-      <span class="material-icons">logout</span>
+      <button><span class="material-icons">notifications</span>Notifications</button>
+      <button><span class="material-icons">restaurant_menu</span>Cart</button>
+      <button><span class="material-icons">logout</span>Logout</button>
     </nav>
     <h1>Burger Queen</h1>
   </header>
   <section class="container-products">
-    <article *ngFor="let product of products" class="product">
-      <img src="{{product.image}}">
-      <h3>{{product.name}}</h3>
-      <h3>$ {{product.price}}</h3>
-      <button>Add</button>
-    </article>
+    <nav>
+      <h3>Food category: </h3>
+      <button (click)="changeProductType('breakfast')">Breakfast</button>
+      <button (click)="changeProductType('lunch')">Lunch</button>
+    </nav>
+    <section>
+      <article *ngFor="let product of filteredProducts" class="product">
+        <img src="{{product.image}}">
+        <h3>{{product.name}}</h3>
+        <h3>{{product.price | currency}}</h3>
+        <button>Add</button>
+      </article>
+    </section>
+    <div>
+      <input type="text" placeholder="Client's name" class="input-form">
+      <input type="text" placeholder="Client's table" class="input-form">
+    </div>
   </section>
 </section>
