@@ -47,24 +47,4 @@ export class LoginComponent {
   togglePassword(): void {
     this.hide = !this.hide;
   }
-
-  // continueLogin() {
-  //   if (this.loginform.valid) {
-  //     this.service.GetByCode(this.loginform.value.username).subscribe((res) => {
-  //       this.userdata = res;
-  //       console.log(this.userdata);
-  //       if (this.userdata.password === this.loginform.value.password) {
-  //         if (this.userdata.isactive) {
-  //           sessionStorage.setItem('username', this.userdata.id);
-  //           sessionStorage.setItem('userrole', this.userdata.role);
-  //           this.router.navigate(['menu']);
-  //         } else {
-  //           this.toastr.error('Please contact admin', 'Inactive user');
-  //         }
-  //       } else {
-  //         this.toastr.error('Invalid credentials');
-  //       }
-  //     });
-  //   }
-  // }
 }

@@ -18,34 +18,61 @@ header h1 {
   font-size: 75px;
 }
 
-nav {
-  display: flex;
-  gap: 25px;
-  padding: 25px;
-}
-
 header nav {
   position: absolute;
   top: 0;
   right: 0;
 }
 
-.material-icons {
+header nav button {
+  background-color: var(--second-dark-color);
   color: var(--main-light-color);
-  font-size: 50px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+header nav button:active {
+  background-color: var(--main-color);
+  color: var(--main-dark-color);
 }
 
 /* ************************************************************* */
 /* products */
-
 .container-products {
+  padding: 25px;
+}
+
+.container-products div {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 25px auto 25px auto;
+}
+
+.container-products div input {
+  width: 100%;
+}
+
+.container-products nav {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: var(--main-light-color);
+}
+
+.container-products section {
   width: 90%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  margin-top: 50px;
 }
 
 .product {
@@ -54,9 +81,9 @@ header nav {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  width: 30%;
+  width: 32%;
   min-height: 450px;
-  margin: 10px;
+  margin: 25px 0 25px 0;
   padding: 30px;
   border-radius: 15px;
 }
@@ -70,4 +97,19 @@ header nav {
 .product h3 {
   color: var(--main-light-color);
   text-align: center;
+}
+
+.container-products button {
+  background-color: var(--main-color);
+  color: var(--main-dark-color);
+}
+
+.container-products nav button:focus {
+  background-color: var(--accent-color);
+  color: var(--main-light-color);
+}
+
+.product button:active {
+  background-color: var(--accent-color);
+  color: var(--main-light-color);
 }

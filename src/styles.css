@@ -33,19 +33,30 @@ body {
 }
 
 button {
-    background-color: var(--main-color);
-    color: var(--main-dark-color);
     font-weight: 800;
     text-align: center;
     padding: 15px 30px 15px 30px;
     cursor: pointer;
     transition-duration: 0.2s;
-    border-radius: 100px;
+    border-radius: 25px;
     margin-top: auto;
     margin-bottom: 0;
 }
 
-button:hover {
-    background-color: var(--accent-color);
-    color: var(--main-light-color);
+nav {
+    display: flex;
+    gap: 25px;
+    padding: 25px;
+}
+
+.input-form {
+    background-color: var(--main-light-color);
+    border-radius: 25px;
+    height: 75px;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
 }

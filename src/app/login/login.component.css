@@ -19,23 +19,6 @@ article {
   width: 400px;
 }
 
-.input-form {
-  background-color: var(--main-light-color);
-  border-radius: 100px;
-  width: 100%;
-  height: 75px;
-  padding: 15px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 15px;
-}
-
-input {
-  width: 100%;
-}
-
 .eye-icon {
   cursor: pointer;
 }
@@ -52,6 +35,16 @@ input {
   display: none;
 }
 
+.section-form button:enabled {
+  background-color: var(--main-color);
+  color: var(--main-dark-color);
+}
+
+.section-form button:active {
+  background-color: var(--accent-color);
+  color: var(--main-light-color);
+}
+
 @media (min-width: 1194px) {
 
   .container {
@@ -63,8 +56,6 @@ input {
   section {
     width: 100%;
   }
-
-
 
   header {
     width: 25%;
