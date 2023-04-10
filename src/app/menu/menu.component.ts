@@ -3,6 +3,7 @@ import { ToastrService } from 'ngx-toastr';
 import { ProductsService } from '../service/products.service';
 import { Router } from '@angular/router';
 import { Products } from '../interfaces/products.interface';
+import { SharedOrderService } from '../service/shared-order.service';
 
 @Component({
   selector: 'app-menu',
@@ -15,8 +16,9 @@ export class MenuComponent implements OnInit {
 
   constructor(
     private toastr: ToastrService,
-    private service: ProductsService
-  ) { }
+    private service: ProductsService,
+    private orderSvc: SharedOrderService
+  ) {}
 
   ngOnInit() {
     this.service.getProducts().subscribe({
@@ -35,7 +37,7 @@ export class MenuComponent implements OnInit {
   filterProductByType(type: string): Products[] {
     return this.products.filter((product) => {
       return product.type === type;
-    })
+    });
   }
 
   // método para cambiar el tipo de producto y actualizar la vista
@@ -43,4 +45,8 @@ export class MenuComponent implements OnInit {
     this.filteredProducts = this.filterProductByType(type);
   }
 
+  onClick(product: Products): void {
+    this.orderSvc.onClickAddOrder(product);
+    console.log('menu', product);
+  }
 }

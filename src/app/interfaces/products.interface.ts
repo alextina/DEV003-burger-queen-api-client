@@ -5,6 +5,7 @@ export interface Products {
   image: URL;
   type: string;
   dateEntry: Date;
+  qty: number;
 }
 
 // {
