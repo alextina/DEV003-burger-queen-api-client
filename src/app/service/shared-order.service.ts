@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Products, ProductsQty } from '../interfaces/products.interface';
+// rxjs: Reactive Extensions Library for JavaScript
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SharedOrderService {
+  // Se declara y define la variable orden como un array vacío
   order: ProductsQty[] = [];
 
   private orderSubject = new BehaviorSubject<ProductsQty[]>([]);
@@ -37,8 +39,23 @@ export class SharedOrderService {
     );
     return this.totalSubject.next(total);
   }
+
   onClickAddOrder(product: Products): void {
     this.addToOrder(product);
     this.totalCount();
   }
+
+  deleteProduct(id: string): void {
+    this.order = this.order.filter((el) => {
+      return el.product._id !== id
+    });
+    this.orderSubject.next(this.order);
+  }
+
+  findProductById(id: string): ProductsQty | undefined {
+    return this.order.find((el) => {
+      return el.product._id === id
+    })
+  }
+
 }

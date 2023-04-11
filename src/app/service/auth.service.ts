@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
   // declarando dependencias que usaremos en la clase
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
   // Declarando e inicializando variable apiurl que se usará para consultar a json-server-auth
   apiurl: string = 'http://localhost:8080/login';
 
@@ -20,6 +20,8 @@ export class AuthService {
     });
   }
 
+
+  // métodos utilizados por el componente 'register'
   GetAll() {
     return this.http.get(this.apiurl);
   }
