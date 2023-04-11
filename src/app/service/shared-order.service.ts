@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Products } from '../interfaces/products.interface';
+import { Products, ProductsQty } from '../interfaces/products.interface';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SharedOrderService {
-  order: Products[] = [];
+  order: ProductsQty[] = [];
 
-  private orderSubject = new BehaviorSubject<Products[]>([]);
+  private orderSubject = new BehaviorSubject<ProductsQty[]>([]);
   private totalSubject = new BehaviorSubject<number>(0);
 
-  get order$(): Observable<Products[]> {
+  get order$(): Observable<ProductsQty[]> {
     return this.orderSubject.asObservable();
   }
 
@@ -19,20 +19,20 @@ export class SharedOrderService {
     return this.totalSubject.asObservable();
   }
   private addToOrder(product: Products): void {
-    const isProductInOrder: Products | undefined = this.order.find(
-      (el) => el._id === product._id
+    const isProductInOrder: ProductsQty | undefined = this.order.find(
+      (el) => el.product._id === product._id
     );
     if (isProductInOrder) {
       isProductInOrder.qty += 1;
     } else {
-      this.order.push({ ...product, qty: 1 });
+      this.order.push({ product: product, qty: 1 });
     }
     this.orderSubject.next(this.order);
   }
 
   private totalCount(): void {
     const total: number = this.order.reduce(
-      (total, el) => (total += el.price * el.qty),
+      (total, el) => (total += el.product.price * el.qty),
       0
     );
     return this.totalSubject.next(total);

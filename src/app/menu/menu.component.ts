@@ -19,8 +19,9 @@ export class MenuComponent implements OnInit {
     private service: ProductsService,
     private orderSvc: SharedOrderService
   ) {}
-
+  //método que se carga al iniciar el componente
   ngOnInit() {
+    // usando método getproduct de la clase Productservice (app/service/ProductService.ts)
     this.service.getProducts().subscribe({
       next: (res) => {
         this.products = res;
@@ -44,6 +45,13 @@ export class MenuComponent implements OnInit {
   changeProductType(type: string) {
     this.filteredProducts = this.filterProductByType(type);
   }
+
+  // método onClick usando en el botón "Add" de cada producto el cual usa el método onClickAddOrder del servicio SharedOrderService :
+  // onClickAddOrder(product: Products): void {
+  //   this.addToOrder(product);
+  //   this.totalCount();
+  // }
+  // este método agrega internamente productos al carrito de ordenes y calcula el total de la orden
 
   onClick(product: Products): void {
     this.orderSvc.onClickAddOrder(product);
