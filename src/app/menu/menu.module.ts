@@ -5,7 +5,9 @@ import { MenuRoutingModule } from './menu-routing.module';
 import { OrderComponent } from './order/order.component';
 
 @NgModule({
+  // asociando componentes al módulo
   declarations: [MenuComponent, OrderComponent],
+  // Asociando Modulos externos 
   imports: [CommonModule,MenuRoutingModule],
 })
 export class MenuModule {}

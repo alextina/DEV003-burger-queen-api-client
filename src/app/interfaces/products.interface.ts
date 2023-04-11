@@ -1,3 +1,4 @@
+// Esquema para tipar  cada producto
 export interface Products {
   _id: string;
   name: string;
@@ -7,11 +8,9 @@ export interface Products {
   dateEntry: Date;
 }
 
-// {
-//     "_id": 1,
-//     "name": "American Coffe",
-//     "price": "$ 5",
-//     "image": "#",
-//     "type": "breakfast",
-//     "dateEntry": "04/04/23"
-//   },
+// Esquema para tipar el producto de la orden
+export interface ProductsQty {
+  qty: number;
+  product: Products;
+}
+

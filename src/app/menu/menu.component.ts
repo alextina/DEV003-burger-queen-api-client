@@ -3,6 +3,7 @@ import { ToastrService } from 'ngx-toastr';
 import { ProductsService } from '../service/products.service';
 import { Router } from '@angular/router';
 import { Products } from '../interfaces/products.interface';
+import { SharedOrderService } from '../service/shared-order.service';
 
 @Component({
   selector: 'app-menu',
@@ -15,10 +16,12 @@ export class MenuComponent implements OnInit {
 
   constructor(
     private toastr: ToastrService,
-    private service: ProductsService
-  ) { }
-
+    private service: ProductsService,
+    private orderSvc: SharedOrderService
+  ) {}
+  //método que se carga al iniciar el componente
   ngOnInit() {
+    // usando método getproduct de la clase Productservice (app/service/ProductService.ts)
     this.service.getProducts().subscribe({
       next: (res) => {
         this.products = res;
@@ -35,7 +38,7 @@ export class MenuComponent implements OnInit {
   filterProductByType(type: string): Products[] {
     return this.products.filter((product) => {
       return product.type === type;
-    })
+    });
   }
 
   // método para cambiar el tipo de producto y actualizar la vista
@@ -43,4 +46,15 @@ export class MenuComponent implements OnInit {
     this.filteredProducts = this.filterProductByType(type);
   }
 
+  // método onClick usando en el botón "Add" de cada producto el cual usa el método onClickAddOrder del servicio SharedOrderService :
+  // onClickAddOrder(product: Products): void {
+  //   this.addToOrder(product);
+  //   this.totalCount();
+  // }
+  // este método agrega internamente productos al carrito de ordenes y calcula el total de la orden
+
+  onClick(product: Products): void {
+    this.orderSvc.onClickAddOrder(product);
+    console.log('menu', product);
+  }
 }

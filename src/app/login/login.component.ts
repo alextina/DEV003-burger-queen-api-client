@@ -10,26 +10,37 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
+  // declarando variables
   loginForm: FormGroup;
+  // declarando-inicializando en  true = visibility_off
   hide: boolean = true;
   constructor(
+    // pasando dependencias que usaremos en el componente
     private builder: FormBuilder,
     private toastr: ToastrService,
     private service: AuthService,
     private router: Router
   ) {
+    //Inicializando variable loginForm con el metodo "builder" de FormBuilder para capturar el email y el password del usuario con el método group
     this.loginForm = this.builder.group({
+      // Inicializando atributo value ="" y asignando validaciones para cada input
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
+
   onSubmit(): void {
+    // objeto formData con propiedades email y password
     const formData = this.loginForm.value;
     // console.log(this.loginForm.value);
+
+    // accediendo al método "methodLogin" de la clase AuthService (app/service/auth.service.ts)donde accede a su método subscribe (El cual estará atento a cualquier emisión de datos que produzca ese servicio) que recide un objeto con los métodos next y error y se ejecutarán segun la respuesta del servidor
     this.service.methodLogin(formData.email, formData.password).subscribe({
       next: (res) => {
-        localStorage.setItem('token', res.accessToken);
+        // Creando la variable "token" en sessionStorage con el valor de la propiedad accessToken del objeto de respuesta
+        sessionStorage.setItem('token', res.accessToken);
         console.log(res.accessToken);
+        // Ruteando al endpoint menu
         this.router.navigate(['menu']);
       },
       error: (error) => {
@@ -41,10 +52,11 @@ export class LoginComponent {
         }
       },
     });
-
-    // this.toastr.error('Invalid credentials');
   }
+  // Funcionamiento del evento click para  ocultar y mostrar la contraseña  con visibility_off - visibility de Material Icons de Google
   togglePassword(): void {
     this.hide = !this.hide;
   }
 }
+// Nota:
+// :void --> no tiene return
