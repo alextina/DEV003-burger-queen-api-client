@@ -13,14 +13,23 @@ import { SharedOrderService } from '../service/shared-order.service';
 export class MenuComponent implements OnInit {
   products!: Products[];
   filteredProducts!: Products[];
+  // creando variable para el modal
+  modalSwitch!: boolean;
 
   constructor(
     private toastr: ToastrService,
     private service: ProductsService,
     private orderSvc: SharedOrderService
-  ) {}
+  ) { }
+
   //método que se carga al iniciar el componente
   ngOnInit() {
+
+    // escuchando el objeto observable del modalSwitch
+    this.orderSvc.$modal.subscribe((value) => {
+      return this.modalSwitch = value
+    })
+
     // usando método getproduct de la clase Productservice (app/service/ProductService.ts)
     this.service.getProducts().subscribe({
       next: (res) => {
@@ -57,4 +66,10 @@ export class MenuComponent implements OnInit {
     this.orderSvc.onClickAddOrder(product);
     console.log('menu', product);
   }
+
+  // método para abrir modal
+  openModal() {
+    this.modalSwitch = true;
+  }
+
 }

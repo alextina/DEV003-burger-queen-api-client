@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Products, ProductsQty } from '../interfaces/products.interface';
 // rxjs: Reactive Extensions Library for JavaScript
 import { BehaviorSubject, Observable } from 'rxjs';
@@ -58,4 +58,26 @@ export class SharedOrderService {
     })
   }
 
+  qtyOperations(operations: string, id: string) {
+    const product = this.order.find((el) => {
+      return el.product._id === id
+    })
+    if (product) {
+      if (operations === 'minus' && product.qty > 0) {
+        product.qty = product.qty - 1;
+        this.orderSubject.next(this.order);
+      }
+      if (operations === 'add') {
+        product.qty = product.qty + 1;
+        this.orderSubject.next(this.order);
+      }
+      if (product.qty === 0) {
+        // this.orderSvc.deleteProduct(id);
+        this.deleteProduct(id);
+      }
+    }
+  }
+
+  // comunicar componentes en angular (inputs y outputs)
+  $modal = new EventEmitter<any>();
 }

@@ -1,24 +1,29 @@
 <section class="order-cart">
   <header class="order-header">
     <h2>Order Cart</h2>
-    <span class="material-icons close-icon">close</span>
+    <span class="material-icons icon" (click)="closeModal()">close</span>
   </header>
-  <h3>nombre - mesa</h3>
+  <h3>Client's name - Client's table</h3>
   <section class="order-summary">
-    <article *ngFor="let product of order$ | async">
-      <p>{{product.product.name}}</p>
-      <div>
-        <span class="material-icons remove-icon" (click)="update('minus', product.product._id)">remove</span>
+    <article class="product-article" *ngFor="let product of order$ | async">
+      <p class="product-name">{{product.product.name}}</p>
+      <div class="product-operation">
+        <button class="button-icon" (click)="update('minus', product.product._id)">
+          <span class="material-icons">remove</span>
+        </button>
         <p>{{product.qty}}</p>
-        <span class="material-icons add-icon" (click)="update('add', product.product._id)">add</span>
+        <button class="button-icon" (click)="update('add', product.product._id)">
+          <span class="material-icons">add</span>
+        </button>
       </div>
-      <p>{{product.product.price * product.qty | currency }}</p>
-      <span class="material-icons delete-icon" (click)="delete(product.product._id)">delete</span>
+      <p class="product-price">{{product.product.price * product.qty | currency }}</p>
+      <span class="material-icons icon" (click)="delete(product.product._id)">delete</span>
     </article>
-    <div>
+    <div class="total-price">
       <p>Total</p>
       <p>{{total$ | async | currency}}</p>
     </div>
   </section>
   <button>Send order</button>
 </section>
+<div class="shadow" (click)="closeModal()"></div>

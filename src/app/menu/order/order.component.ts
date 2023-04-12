@@ -17,18 +17,24 @@ export class OrderComponent {
   }
 
   update(operations: string, id: string) {
-    const product: ProductsQty | undefined = this.orderSvc.findProductById(id);
-    if (product) {
-      if (operations === 'minus' && product.qty > 0) {
-        product.qty = product.qty - 1;
-      }
-      if (operations === 'add') {
-        product.qty = product.qty + 1;
-      }
-      if (product.qty === 0) {
-        // this.orderSvc.deleteProduct(id);
-        this.delete(id);
-      }
-    }
+    this.orderSvc.qtyOperations(operations, id)
+    // const product: ProductsQty | undefined = this.orderSvc.findProductById(id);
+    // if (product) {
+    //   if (operations === 'minus' && product.qty > 0) {
+    //     product.qty = product.qty - 1;
+    //   }
+    //   if (operations === 'add') {
+    //     product.qty = product.qty + 1;
+    //   }
+    //   if (product.qty === 0) {
+    //     // this.orderSvc.deleteProduct(id);
+    //     this.delete(id);
+    //   }
+    // }
+  }
+
+  // para cerrar modal
+  closeModal() {
+    this.orderSvc.$modal.emit(false)
   }
 }
