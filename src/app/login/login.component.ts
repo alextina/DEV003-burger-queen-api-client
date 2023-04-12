@@ -16,7 +16,7 @@ export class LoginComponent {
   hide: boolean = true;
   images = [
     '../../assets/burgers-login.jpg',
-    'https://img.freepik.com/foto-gratis/vista-frontal-hamburguesa-stand_141793-15542.jpg?w=2000',
+    '../../assets/burgers-login2.jpg',
   ];
   constructor(
     // pasando dependencias que usaremos en el componente

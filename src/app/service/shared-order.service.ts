@@ -47,32 +47,33 @@ export class SharedOrderService {
 
   deleteProduct(id: string): void {
     this.order = this.order.filter((el) => {
-      return el.product._id !== id
+      return el.product._id !== id;
     });
     this.orderSubject.next(this.order);
+    this.totalCount();
   }
 
   findProductById(id: string): ProductsQty | undefined {
     return this.order.find((el) => {
-      return el.product._id === id
-    })
+      return el.product._id === id;
+    });
   }
 
   qtyOperations(operations: string, id: string) {
     const product = this.order.find((el) => {
-      return el.product._id === id
-    })
+      return el.product._id === id;
+    });
     if (product) {
       if (operations === 'minus' && product.qty > 0) {
         product.qty = product.qty - 1;
-        this.orderSubject.next(this.order);
+        console.log(this.order);
+        this.totalCount();
       }
       if (operations === 'add') {
         product.qty = product.qty + 1;
-        this.orderSubject.next(this.order);
+        this.totalCount();
       }
       if (product.qty === 0) {
-        // this.orderSvc.deleteProduct(id);
         this.deleteProduct(id);
       }
     }
