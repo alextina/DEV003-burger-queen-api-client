@@ -13,6 +13,8 @@ import { SharedOrderService } from '../service/shared-order.service';
 export class MenuComponent implements OnInit {
   products!: Products[];
   filteredProducts!: Products[];
+  active1: boolean = true;
+  active2: boolean = false;
 
   constructor(
     private toastr: ToastrService,
@@ -29,7 +31,7 @@ export class MenuComponent implements OnInit {
         console.log(res);
       },
       error: (err) => {
-        this.toastr.error(err.error, 'Loading error');
+        this.toastr.error('Loading error');
       },
     });
   }
@@ -44,6 +46,14 @@ export class MenuComponent implements OnInit {
   // método para cambiar el tipo de producto y actualizar la vista
   changeProductType(type: string) {
     this.filteredProducts = this.filterProductByType(type);
+    if (type === 'breakfast') {
+      this.active1 = true;
+      this.active2 = false;
+    }
+    if (type === 'lunch') {
+      this.active1 = false;
+      this.active2 = true;
+    }
   }
 
   // método onClick usando en el botón "Add" de cada producto el cual usa el método onClickAddOrder del servicio SharedOrderService :

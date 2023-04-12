@@ -8,12 +8,12 @@
     <h1>Burger Queen</h1>
   </header>
   <section class="container-products">
-    <nav>
+    <nav class="container-products_nav">
       <h3>Food category: </h3>
-      <button (click)="changeProductType('breakfast')">Breakfast</button>
-      <button (click)="changeProductType('lunch')">Lunch</button>
+      <button (click)="changeProductType('breakfast')" [class.active]="active1">Breakfast</button>
+      <button (click)="changeProductType('lunch')" [class.active]="active2">Lunch</button>
     </nav>
-    <section>
+    <section class="container-products_section">
       <article *ngFor="let product of filteredProducts" class="product">
         <img src="{{product.image}}">
         <h3>{{product.name}}</h3>
@@ -21,7 +21,7 @@
         <button (click)="onClick(product)">Add</button>
       </article>
     </section>
-    <div>
+    <div class="client-table">
       <input type="text" placeholder="Client's name" class="input-form">
       <input type="text" placeholder="Client's table" class="input-form">
     </div>

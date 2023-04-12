@@ -14,6 +14,10 @@ export class LoginComponent {
   loginForm: FormGroup;
   // declarando-inicializando en  true = visibility_off
   hide: boolean = true;
+  images = [
+    '../../assets/burgers-login.jpg',
+    'https://img.freepik.com/foto-gratis/vista-frontal-hamburguesa-stand_141793-15542.jpg?w=2000',
+  ];
   constructor(
     // pasando dependencias que usaremos en el componente
     private builder: FormBuilder,
