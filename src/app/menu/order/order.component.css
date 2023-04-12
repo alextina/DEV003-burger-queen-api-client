@@ -1,0 +1,168 @@
+.shadow {
+    background-color: var(--main-dark-color);
+    opacity: 0.75;
+    mix-blend-mode: multiply;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+}
+
+h2,
+h3,
+p {
+    color: var(--main-light-color);
+}
+
+.order-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 0;
+    padding: 25px;
+    position: fixed;
+    bottom: 0;
+    background-color: var(--main-dark-color);
+    border-radius: 25px 25px 0 0;
+    width: 100%;
+    max-height: 75%;
+    /* Barra de desplazamiento vertical */
+    overflow-y: auto;
+    z-index: 1;
+    transform: translateY(100%);
+    animation: upMove 0.5s ease-in-out forwards;
+}
+
+.order-header {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 3px var(--accent-color);
+    padding-bottom: 15px;
+    flex-shrink: 0;
+    /* Agrega esta línea para evitar la compresión del encabezado */
+}
+
+h3 {
+    width: 90%;
+    font-size: 28px;
+    text-align: left;
+    padding-bottom: 15px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+.order-summary {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    gap: 25px;
+    overflow-y: auto;
+    /* Agrega esta línea para barra de desplazamiento vertical en el resumen del pedido */
+}
+
+.product-article {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: solid 1px var(--main-light-color);
+    padding-bottom: 15px;
+}
+
+.product-name {
+    width: 250px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.product-operation {
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product-operation p {
+    text-align: center;
+}
+
+.button-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--accent-color);
+    height: 60px;
+    width: 60px;
+    border-radius: 10px;
+}
+
+.button-icon:active {
+    background-color: var(--main-color);
+}
+
+.material-icons:active {
+    color: var(--main-dark-color);
+}
+
+.material-icons {
+    color: var(--main-light-color)
+}
+
+.product-price {
+    width: 150px;
+    padding-left: 20px;
+}
+
+.icon {
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.total-price {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (min-width: 1194px) {
+
+    .order-cart {
+        position: fixed;
+        right: 0;
+        width: 75%;
+        min-height: 100%;
+        justify-content: flex-start;
+        padding-top: 50px;
+        transform: translateX(100%);
+        animation: rightMove 0.5s ease-in-out forwards;
+    }
+
+}
+
+/* reglas (keyframes) de CSS que se utiliza para definir una animación */
+@keyframes upMove {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes rightMove {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
