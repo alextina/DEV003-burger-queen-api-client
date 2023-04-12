@@ -8,7 +8,7 @@ import { SharedOrderService } from 'src/app/service/shared-order.service';
   styleUrls: ['./order.component.css'],
 })
 export class OrderComponent {
-  constructor(private orderSvc: SharedOrderService) { }
+  constructor(private orderSvc: SharedOrderService) {}
   order$ = this.orderSvc.order$;
   total$ = this.orderSvc.total$;
 
@@ -17,7 +17,7 @@ export class OrderComponent {
   }
 
   update(operations: string, id: string) {
-    this.orderSvc.qtyOperations(operations, id)
+    this.orderSvc.qtyOperations(operations, id);
     // const product: ProductsQty | undefined = this.orderSvc.findProductById(id);
     // if (product) {
     //   if (operations === 'minus' && product.qty > 0) {
@@ -35,6 +35,6 @@ export class OrderComponent {
 
   // para cerrar modal
   closeModal() {
-    this.orderSvc.$modal.emit(false)
+    this.orderSvc.$modal.emit(false);
   }
 }
