@@ -1,6 +1,7 @@
 <section class="container">
-
-  <section class="background-image"></section>
+  <section class="background-image">
+    <div *ngFor="let image of images" [style.background-image]="'url(' + image + ')'"></div>
+  </section>
   <section>
     <header>
       <img class="logo" src="../../assets/Logo-Burger-Queen.png" alt="burger-queen-logo">
@@ -17,7 +18,10 @@
           </div>
           <!-- Utilizando ngIf para mostrar/ocultar errores, con el método controls asociado a la variable "email" -->
           <div class="error" *ngIf="loginForm.controls['email'].hasError('email')">
-            Please enter a valid email address.
+            <span class="material-icons">
+              error_outline
+            </span>
+            <p>Please enter a valid email address.</p>
           </div>
         </article>
         <article>
@@ -31,7 +35,10 @@
             </span>
           </div>
           <div class="error" *ngIf="loginForm.controls['password'].hasError('minlength')">
-            Password must be at least 6 characters long.
+            <span class="material-icons">
+              error_outline
+            </span>
+            <p>Password must be at least 6 characters long.</p>
           </div>
         </article>
         <!-- Usando atributo disabled para habilitar y deshabilitar el botón dependiendo de la validación de email-password-->
