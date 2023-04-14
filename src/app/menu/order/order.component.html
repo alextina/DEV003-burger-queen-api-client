@@ -5,7 +5,7 @@
   </header>
   <h3>Client's name - Client's table</h3>
   <section class="order-summary">
-    <article class="product-article" *ngFor="let product of order$ | async">
+    <article class="product-article" *ngFor="let product of productsOrder$ | async">
       <p class="product-name">{{product.product.name}}</p>
       <div class="product-operation">
         <button class="button-icon" (click)="update('minus', product.product._id)">

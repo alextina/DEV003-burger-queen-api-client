@@ -9,7 +9,7 @@ import { SharedOrderService } from 'src/app/service/shared-order.service';
 })
 export class OrderComponent {
   constructor(private orderSvc: SharedOrderService) {}
-  order$ = this.orderSvc.order$;
+  productsOrder$ = this.orderSvc.productsOrder$;
   total$ = this.orderSvc.total$;
 
   delete(id: string) {
