@@ -3,7 +3,7 @@
     <h2>Order Cart</h2>
     <span class="material-icons icon" (click)="closeModal()">close</span>
   </header>
-  <h3>Client's name - Client's table</h3>
+  <h3>{{clientName}} - Table: {{clientTable}}</h3>
   <section class="order-summary">
     <article class="product-article" *ngFor="let product of productsOrder$ | async">
       <p class="product-name">{{product.product.name}}</p>
@@ -24,6 +24,6 @@
       <p>{{total$ | async | currency}}</p>
     </div>
   </section>
-  <button>Send order</button>
+  <button (click)="sendOrder()" [disabled]="!clientName || !clientTable || !noProduct.length">Send order</button>
 </section>
 <div class="shadow" (click)="closeModal()"></div>

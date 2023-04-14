@@ -15,6 +15,8 @@ export class SharedOrderService {
   private productsOrderSubject = new BehaviorSubject<ProductsQty[]>([]);
   private totalSubject = new BehaviorSubject<number>(0);
   private orderSubject = new BehaviorSubject<Order[]>([]);
+  private qtySubject = new BehaviorSubject<number>(0);
+
 
   get productsOrder$(): Observable<ProductsQty[]> {
     return this.productsOrderSubject.asObservable();
@@ -26,6 +28,10 @@ export class SharedOrderService {
 
   get order$(): Observable<Order[]> {
     return this.orderSubject.asObservable();
+  }
+
+  get qty$(): Observable<number> {
+    return this.qtySubject.asObservable();
   }
 
   private addToProduct(product: Products): void {
@@ -48,10 +54,11 @@ export class SharedOrderService {
     return this.totalSubject.next(total);
   }
 
-  private addToOrder(client: string): void {
+  private addToOrder(client: string, tableNum: number): void {
     this.order.push({
       userId: sessionStorage.getItem('idUser'),
       client: client,
+      tableNum: tableNum,
       products: this.productsOrder,
       status: 'pending',
       dataEntry: new Date(),
@@ -59,9 +66,14 @@ export class SharedOrderService {
     return this.orderSubject.next(this.order);
   }
 
+  onClickAddOrder(client: string, tableNum: number) {
+    this.addToOrder(client, tableNum);
+  }
+
   onClickAddProduct(product: Products): void {
     this.addToProduct(product);
     this.totalCount();
+    this.qtyAddedProducts();
   }
 
   deleteProduct(id: string): void {
@@ -70,6 +82,7 @@ export class SharedOrderService {
     });
     this.productsOrderSubject.next(this.productsOrder);
     this.totalCount();
+    this.qtyAddedProducts();
   }
 
   qtyOperations(operations: string, id: string) {
@@ -81,15 +94,23 @@ export class SharedOrderService {
         product.qty = product.qty - 1;
         console.log(this.productsOrder);
         this.totalCount();
+        this.qtyAddedProducts();
       }
       if (operations === 'add') {
         product.qty = product.qty + 1;
         this.totalCount();
+        this.qtyAddedProducts();
       }
       if (product.qty === 0) {
         this.deleteProduct(id);
+        this.qtyAddedProducts();
       }
     }
+  }
+
+  qtyAddedProducts() {
+    const qty: number = this.productsOrder.reduce((a, b) => a = a + b.qty, 0);
+    this.qtySubject.next(qty)
   }
 
   // comunicar componentes en angular (inputs y outputs)

@@ -13,6 +13,9 @@ import { SharedOrderService } from '../service/shared-order.service';
 export class MenuComponent implements OnInit {
   products!: Products[];
   filteredProducts!: Products[];
+  client: string = "";
+  table!: number;
+  qty$ = this.orderSvc.qty$;
 
   // creando variable para el modal
   modalSwitch!: boolean;

@@ -1,10 +1,8 @@
 header {
   height: 290px;
   width: 100%;
-  background-image: linear-gradient(
-      rgba(30, 30, 30, 0.25),
-      rgba(30, 30, 30, 0.75)
-    ),
+  background-image: linear-gradient(rgba(30, 30, 30, 0.25),
+      rgba(30, 30, 30, 0.75)),
     url("../../assets/burgers-login.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -81,6 +79,7 @@ header nav button:active {
   color: var(--main-light-color);
   border: 1px solid var(--main-light-color);
 }
+
 .container-products_nav .active {
   background-color: var(--main-color);
   color: var(--main-dark-color);
@@ -133,15 +132,29 @@ header nav button:active {
   background-color: var(--accent-color);
   color: var(--main-light-color);
 }
+
+.notification {
+  background-color: var(--main-color);
+  color: var(--main-dark-color);
+  border-radius: 50%;
+  height: 34px;
+  width: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media (max-width: 700px) {
   .client-table {
     margin: 10px 30px;
     flex-direction: column;
   }
+
   .client-table input {
     width: 100%;
   }
 }
+
 @media (max-width: 550px) {
   .container-products_nav {
     flex-direction: column;
