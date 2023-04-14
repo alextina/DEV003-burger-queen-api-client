@@ -2,7 +2,9 @@
   <header>
     <nav>
       <button><span class="material-icons">notifications</span>Done</button>
-      <button (click)="openModal()"><span class="material-icons">restaurant_menu</span>Order</button>
+      <button (click)="openModal()"><span class="material-icons">restaurant_menu</span>
+        Order <div *ngIf="qty$ | async" class="notification">{{qty$ | async}}</div>
+      </button>
       <button><span class="material-icons">logout</span>Logout</button>
     </nav>
     <h1>Burger Queen</h1>
@@ -22,14 +24,14 @@
       </article>
     </section>
     <div class="client-table">
-      <input type="text" placeholder="Client's name" class="input-form">
-      <input type="text" placeholder="Client's table" class="input-form">
+      <input type="text" placeholder="Client's name" class="input-form" [(ngModel)]="client">
+      <input type="number" placeholder="Client's table" class="input-form" [(ngModel)]="table">
     </div>
   </section>
 </section>
 <section>
   <!-- cambiar el modal -->
   <div *ngIf="modalSwitch == true">
-    <app-order></app-order>
+    <app-order [clientName]="client" [clientTable]="table"></app-order>
   </div>
 </section>
