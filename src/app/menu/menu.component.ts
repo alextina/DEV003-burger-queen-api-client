@@ -75,7 +75,7 @@ export class MenuComponent implements OnInit {
   // este método agrega internamente productos al carrito de ordenes y calcula el total de la orden
 
   onClick(product: Products): void {
-    this.orderSvc.onClickAddOrder(product);
+    this.orderSvc.onClickAddProduct(product);
     console.log('menu', product);
   }
 

@@ -42,7 +42,9 @@ export class LoginComponent {
     this.service.methodLogin(formData.email, formData.password).subscribe({
       next: (res) => {
         // Creando la variable "token" en sessionStorage con el valor de la propiedad accessToken del objeto de respuesta
+        console.log(res);
         sessionStorage.setItem('token', res.accessToken);
+        sessionStorage.setItem('idUser', res.user.id);
         console.log(res.accessToken);
         // Ruteando al endpoint menu
         this.router.navigate(['menu']);
