@@ -7,9 +7,9 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
   // declarando dependencias que usaremos en la clase
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
   // Declarando e inicializando variable apiurl que se usará para consultar a json-server-auth
-  apiurl: string = 'http://localhost:8080/login';
+  apiurl: string = 'https://server-mock-burger-queen.onrender.com/login';
 
   // Método que devuelve un observable: (es una colección de futuros valores=Promesa )
   methodLogin(email: string, password: string): Observable<any> {
@@ -19,7 +19,6 @@ export class AuthService {
       password: password,
     });
   }
-
 
   // métodos utilizados por el componente 'register'
   GetAll() {
