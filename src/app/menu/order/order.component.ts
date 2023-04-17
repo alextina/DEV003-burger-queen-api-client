@@ -1,8 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ProductsQty } from 'src/app/interfaces/products.interface';
 import { SharedOrderService } from 'src/app/service/shared-order.service';
 import { ToastrService } from 'ngx-toastr';
-
 
 @Component({
   selector: 'app-order',
@@ -12,20 +11,20 @@ import { ToastrService } from 'ngx-toastr';
 export class OrderComponent implements OnInit {
   constructor(
     private orderSvc: SharedOrderService,
-    private toastr: ToastrService,
-  ) { }
+    private toastr: ToastrService
+  ) {}
 
   @Input() clientName!: string;
-  @Input() clientTable!: number;
+  @Input() clientTable!: number | null;
+  @Output() resetNameTable = new EventEmitter<void>();
 
   productsOrder$ = this.orderSvc.productsOrder$;
   total$ = this.orderSvc.total$;
   order$ = this.orderSvc.order$;
   noProduct!: ProductsQty[];
 
-
   ngOnInit() {
-    this.productsOrder$.subscribe((res) => this.noProduct = res)
+    this.productsOrder$.subscribe((res) => (this.noProduct = res));
   }
 
   // para eliminar productos
@@ -46,7 +45,13 @@ export class OrderComponent implements OnInit {
   // enviar orden a carrito de compras
   sendOrder() {
     this.orderSvc.onClickAddOrder(this.clientName, this.clientTable);
-    this.order$.subscribe((res) => console.log(res))
-    this.toastr.info('Order sent.')
+    this.order$.subscribe((res) => console.log(res));
+    this.orderSvc.resetProductsOrder();
+    this.closeModal();
+    this.clientName = '';
+    this.clientTable = null;
+    // emitiendo evento para resetear nombre del cliente en menu
+    this.resetNameTable.emit();
+    this.toastr.info('Order sent.');
   }
 }

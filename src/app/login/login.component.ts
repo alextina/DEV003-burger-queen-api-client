@@ -45,6 +45,7 @@ export class LoginComponent {
         console.log(res);
         sessionStorage.setItem('token', res.accessToken);
         sessionStorage.setItem('idUser', res.user.id);
+        sessionStorage.setItem('role', res.user.role);
         console.log(res.accessToken);
         // Ruteando al endpoint menu
         this.router.navigate(['menu']);

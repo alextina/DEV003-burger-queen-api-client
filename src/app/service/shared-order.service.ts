@@ -17,7 +17,6 @@ export class SharedOrderService {
   private orderSubject = new BehaviorSubject<Order[]>([]);
   private qtySubject = new BehaviorSubject<number>(0);
 
-
   get productsOrder$(): Observable<ProductsQty[]> {
     return this.productsOrderSubject.asObservable();
   }
@@ -54,7 +53,7 @@ export class SharedOrderService {
     return this.totalSubject.next(total);
   }
 
-  private addToOrder(client: string, tableNum: number): void {
+  private addToOrder(client: string, tableNum: number|null): void {
     this.order.push({
       userId: sessionStorage.getItem('idUser'),
       client: client,
@@ -66,7 +65,14 @@ export class SharedOrderService {
     return this.orderSubject.next(this.order);
   }
 
-  onClickAddOrder(client: string, tableNum: number) {
+  resetProductsOrder(): void {
+    this.totalSubject.next(0);
+    this.qtySubject.next(0);
+    this.productsOrderSubject.next([]);
+    this.productsOrder = [];
+  }
+
+  onClickAddOrder(client: string, tableNum: number | null) {
     this.addToOrder(client, tableNum);
   }
 
@@ -109,8 +115,8 @@ export class SharedOrderService {
   }
 
   qtyAddedProducts() {
-    const qty: number = this.productsOrder.reduce((a, b) => a = a + b.qty, 0);
-    this.qtySubject.next(qty)
+    const qty: number = this.productsOrder.reduce((a, b) => (a = a + b.qty), 0);
+    this.qtySubject.next(qty);
   }
 
   // comunicar componentes en angular (inputs y outputs)

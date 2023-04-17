@@ -32,6 +32,6 @@
 <section>
   <!-- cambiar el modal -->
   <div *ngIf="modalSwitch == true">
-    <app-order [clientName]="client" [clientTable]="table"></app-order>
+    <app-order [clientName]="client" [clientTable]="table" (resetNameTable)="resetNameTableMenu()"></app-order>
   </div>
 </section>

@@ -4,15 +4,29 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { MenuComponent } from './menu/menu.component';
 import { AdminComponent } from './admin/admin.component';
+import {
+  authGuardAdmin,
+  authGuardLogin,
+  authGuardMenu,
+} from './guard/auth-fn.guard';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  {
+    path: '',
+    component: LoginComponent,
+    canActivate: [authGuardLogin],
+  },
   { path: 'register', component: RegisterComponent },
   {
     path: 'menu',
     loadChildren: () => import('./menu/menu.module').then((m) => m.MenuModule),
+    canActivate: [authGuardMenu],
   },
-  { path: 'admin', component: AdminComponent },
+  {
+    path: 'admin',
+    component: AdminComponent,
+    canActivate: [authGuardAdmin],
+  },
 ];
 
 @NgModule({
