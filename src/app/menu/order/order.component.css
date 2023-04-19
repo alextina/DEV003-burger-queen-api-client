@@ -43,8 +43,8 @@ p {
     justify-content: space-between;
     border-bottom: solid 3px var(--accent-color);
     padding-bottom: 15px;
+    /* Línea para evitar la compresión del encabezado */
     flex-shrink: 0;
-    /* Agrega esta línea para evitar la compresión del encabezado */
 }
 
 h3 {
@@ -63,8 +63,8 @@ h2 {
     flex-direction: column;
     width: 90%;
     gap: 25px;
+    /* Barra de desplazamiento vertical en el resumen del pedido */
     overflow-y: auto;
-    /* Agrega esta línea para barra de desplazamiento vertical en el resumen del pedido */
 }
 
 .product-article {

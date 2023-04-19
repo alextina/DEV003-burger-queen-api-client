@@ -2,12 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { MenuComponent } from './menu/menu.component';
 import { AdminComponent } from './admin/admin.component';
+import { KitchenComponent } from './kitchen/kitchen.component';
 import {
   authGuardAdmin,
   authGuardLogin,
   authGuardMenu,
+  authGuardKitchen
 } from './guard/auth-fn.guard';
 
 const routes: Routes = [
@@ -27,10 +28,15 @@ const routes: Routes = [
     component: AdminComponent,
     canActivate: [authGuardAdmin],
   },
+  {
+    path: 'kitchen',
+    component: KitchenComponent,
+    canActivate: [authGuardKitchen],
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

@@ -12,7 +12,7 @@ export class OrderComponent implements OnInit {
   constructor(
     private orderSvc: SharedOrderService,
     private toastr: ToastrService
-  ) {}
+  ) { }
 
   @Input() clientName!: string;
   @Input() clientTable!: number | null;
