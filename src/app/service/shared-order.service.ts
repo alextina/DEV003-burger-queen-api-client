@@ -3,6 +3,8 @@ import { Products, ProductsQty } from '../interfaces/products.interface';
 // rxjs: Reactive Extensions Library for JavaScript
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Order } from '../interfaces/order.interface';
+import { OrderService } from './order.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +13,10 @@ export class SharedOrderService {
   // Se declara y define la variable orden como un array vacío
   productsOrder: ProductsQty[] = [];
   order: Order[] = [];
+
+  constructor(
+    private orderHttpSvc: OrderService,
+    private toastr: ToastrService) { }
 
   private productsOrderSubject = new BehaviorSubject<ProductsQty[]>([]);
   private totalSubject = new BehaviorSubject<number>(0);
@@ -53,16 +59,23 @@ export class SharedOrderService {
     return this.totalSubject.next(total);
   }
 
-  private addToOrder(client: string, tableNum: number|null): void {
-    this.order.push({
+  private addToOrder(client: string, tableNum: number | null): void {
+    // creando body para el post
+    const orderObj = {
       userId: sessionStorage.getItem('idUser'),
       client: client,
       tableNum: tableNum,
       products: this.productsOrder,
       status: 'pending',
       dataEntry: new Date(),
+    };
+    // enviando orden al servidor
+    this.orderHttpSvc.postOrder(orderObj).subscribe({
+      error: (error) => {
+        console.log(error);
+        this.toastr.error(error.error, 'something went wrong');
+      },
     });
-    return this.orderSubject.next(this.order);
   }
 
   resetProductsOrder(): void {

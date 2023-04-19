@@ -46,9 +46,17 @@ export class LoginComponent {
         sessionStorage.setItem('token', res.accessToken);
         sessionStorage.setItem('idUser', res.user.id);
         sessionStorage.setItem('role', res.user.role);
+        const role = sessionStorage.getItem('role')
+        if (role === 'admin') {
+          this.router.navigate(['admin'])
+        } else if (role === 'waiter') {
+          this.router.navigate(['menu'])
+        } else if (role === 'chef') {
+          this.router.navigate(['kitchen'])
+        } else { this.router.navigate(['']) }
         console.log(res.accessToken);
         // Ruteando al endpoint menu
-        this.router.navigate(['menu']);
+        // this.router.navigate(['menu']);
       },
       error: (error) => {
         console.log(error);

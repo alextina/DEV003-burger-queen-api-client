@@ -27,7 +27,7 @@ export class MenuComponent implements OnInit {
     private toastr: ToastrService,
     private service: ProductsService,
     private orderSvc: SharedOrderService
-  ) {}
+  ) { }
 
   //método que se carga al iniciar el componente
   ngOnInit() {

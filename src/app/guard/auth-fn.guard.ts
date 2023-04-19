@@ -1,6 +1,6 @@
 import { inject } from '@angular/core';
 import { Router, CanActivateFn } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
+import { Toast, ToastrService } from 'ngx-toastr';
 
 export const authGuardLogin: CanActivateFn = (): boolean => {
   const role = sessionStorage.getItem('role');
@@ -47,13 +47,18 @@ export const authGuardAdmin: CanActivateFn = (): boolean => {
   return false;
 };
 
-// export const authGuardRole = () => {
-//   const role = sessionStorage.getItem('role');
-//   const router: Router = inject(Router);
-//   if (role === 'waiter' && location.pathname !== '/menu') {
-//     router.navigate(['menu']);
-//     console.log('entro');
-//     return false;
-//   }
-//   return true;
-// };
+export const authGuardKitchen: CanActivateFn = (): boolean => {
+  const token = sessionStorage.getItem('token');
+  const role = sessionStorage.getItem('role');
+  const router: Router = inject(Router);
+  const toastr: ToastrService = inject(ToastrService);
+
+  if (!token) {
+    router.navigate(['']);
+  } else if (role === 'chef' || role === 'admin') {
+    return true;
+  }
+  router.navigate(['']);
+  toastr.info('Permission denied, contact admin.');
+  return false;
+}

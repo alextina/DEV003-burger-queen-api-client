@@ -1,0 +1,23 @@
+<section>
+    <header>
+        <nav>
+            <button><span class="material-icons">logout</span>Logout</button>
+        </nav>
+        <h1>Burger Queen</h1>
+    </header>
+    <section class="container-order">
+        <article *ngFor=" let order of orders" class="order">
+            <section class="order-info">
+                <h3>{{order.client}} - Mesa: {{order.tableNum}}</h3>
+                <p>Time: {{order.dataEntry | date:'shortTime'}}</p>
+            </section>
+            <section class="order-products">
+                <article *ngFor="let product of order.products">
+                    <p>{{product.product.name}}</p>
+                    <p>{{product.qty}}</p>
+                </article>
+            </section>
+            <button>Done</button>
+        </article>
+    </section>
+</section>
