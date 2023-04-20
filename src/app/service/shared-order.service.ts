@@ -13,10 +13,13 @@ export class SharedOrderService {
   // Se declara y define la variable orden como un array vacío
   productsOrder: ProductsQty[] = [];
   order: Order[] = [];
+  // comunicar componentes en angular (inputs y outputs)
+  $modal = new EventEmitter<any>();
 
   constructor(
     private orderHttpSvc: OrderService,
-    private toastr: ToastrService) { }
+    private toastr: ToastrService
+  ) {}
 
   private productsOrderSubject = new BehaviorSubject<ProductsQty[]>([]);
   private totalSubject = new BehaviorSubject<number>(0);
@@ -131,7 +134,4 @@ export class SharedOrderService {
     const qty: number = this.productsOrder.reduce((a, b) => (a = a + b.qty), 0);
     this.qtySubject.next(qty);
   }
-
-  // comunicar componentes en angular (inputs y outputs)
-  $modal = new EventEmitter<any>();
 }

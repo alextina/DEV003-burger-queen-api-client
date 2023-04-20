@@ -9,7 +9,7 @@ export class AuthService {
   // declarando dependencias que usaremos en la clase
   constructor(private http: HttpClient) {}
   // Declarando e inicializando variable apiurl que se usará para consultar a json-server-auth
-  apiurl: string = 'https://server-mock-burger-queen.onrender.com/login';
+  apiurl: string = 'https://burger-queen-server-mock-21hr.onrender.com/login';
 
   // Método que devuelve un observable: (es una colección de futuros valores=Promesa )
   methodLogin(email: string, password: string): Observable<any> {
