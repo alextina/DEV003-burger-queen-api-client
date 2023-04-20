@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { OrderService } from '../service/order.service';
 import { Order } from '../interfaces/order.interface';
@@ -6,7 +6,7 @@ import { Order } from '../interfaces/order.interface';
 @Component({
   selector: 'app-kitchen',
   templateUrl: './kitchen.component.html',
-  styleUrls: ['./kitchen.component.css']
+  styleUrls: ['./kitchen.component.css'],
 })
 export class KitchenComponent implements OnInit {
   orders!: Order[];
@@ -14,19 +14,19 @@ export class KitchenComponent implements OnInit {
   constructor(
     private orderHttpSvc: OrderService,
     private toastr: ToastrService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
-    this.orderHttpSvc.getOrder().subscribe({
+    this.orderHttpSvc.getOrder('pending').subscribe({
       next: (res) => {
         this.orders = res;
         // filtrar pendientes
         // filtrar delivery (vista mesero)
         console.log(res);
       },
-      error: (error) => {
+      error: () => {
         this.toastr.error('Loading error orders');
-      }
-    })
+      },
+    });
   }
 }

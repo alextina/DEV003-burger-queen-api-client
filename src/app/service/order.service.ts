@@ -4,16 +4,15 @@ import { Observable } from 'rxjs';
 import { Order } from '../interfaces/order.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class OrderService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  apiurl: string = 'https://server-mock-burger-queen.onrender.com/orders';
+  // posts?title=json-server
 
   postOrder(order: Order): Observable<any> {
-
+    const apiurl: string = `https://burger-queen-server-mock-21hr.onrender.com/orders`;
     const httpOptions = {
       headers: new HttpHeaders({
         // Authorization es una propiedad, con el valor del token que reicibimos al iniciar sesión en el login
@@ -21,11 +20,12 @@ export class OrderService {
       }),
     };
 
-    return this.http.post(this.apiurl, order, httpOptions)
+    return this.http.post(apiurl, order, httpOptions);
   }
 
-  getOrder(): Observable<Order[]> {
-
+  getOrder(status: string): Observable<Order[]> {
+    const apiurl: string = `https://burger-queen-server-mock-21hr.onrender.com/orders?status=${status}&_sort=dataEntry&_order=asc`;
+    // posts?_sort=views&_order=asc
     const httpOptions = {
       headers: new HttpHeaders({
         // Authorization es una propiedad, con el valor del token que reicibimos al iniciar sesión en el login
@@ -33,7 +33,6 @@ export class OrderService {
       }),
     };
 
-    return this.http.get<Order[]>(this.apiurl, httpOptions)
+    return this.http.get<Order[]>(apiurl, httpOptions);
   }
-
 }

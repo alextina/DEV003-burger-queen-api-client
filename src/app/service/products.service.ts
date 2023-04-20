@@ -8,9 +8,10 @@ import { Products } from '../interfaces/products.interface';
 })
 export class ProductsService {
   // Llamando a las dependencias que vamos a usar
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
   // Declarando e inicializando la variable apiurl
-  private apiurl: string = 'https://server-mock-burger-queen.onrender.com/products';
+  private apiurl: string =
+    'https://burger-queen-server-mock-21hr.onrender.com/products';
 
   // El método no tiene parámtros y devuelve un Observable que es un array de Products (../interfaces/products.interface)
   getProducts(): Observable<Products[]> {
