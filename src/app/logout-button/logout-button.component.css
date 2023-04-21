@@ -1,0 +1,14 @@
+button {
+    background-color: var(--second-dark-color);
+    color: var(--main-light-color);
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+button:active {
+    background-color: var(--main-color);
+    color: var(--main-dark-color);
+}

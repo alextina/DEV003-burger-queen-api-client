@@ -26,7 +26,8 @@ export class MenuComponent implements OnInit {
   constructor(
     private toastr: ToastrService,
     private service: ProductsService,
-    private orderSvc: SharedOrderService
+    private orderSvc: SharedOrderService,
+    private router: Router,
   ) { }
 
   //método que se carga al iniciar el componente
@@ -91,4 +92,9 @@ export class MenuComponent implements OnInit {
     this.client = '';
     this.table = null;
   }
+
+  goToDelivering(): void {
+    this.router.navigate(['delivering']);
+  }
+
 }

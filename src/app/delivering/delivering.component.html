@@ -1,0 +1,19 @@
+<section>
+    <header>
+        <nav>
+            <button><span class="material-icons">logout</span>Logout</button>
+        </nav>
+        <h1>Burger Queen</h1>
+    </header>
+
+    <section>
+        <article *ngFor="let order of orders">
+            <h3>{{order.client}}</h3>
+            <h3>{{order.tableNum}}</h3>
+            <button (click)="OnClickDelivered(order)">Done</button>
+        </article>
+    </section>
+
+    <app-delivered></app-delivered>
+
+</section>

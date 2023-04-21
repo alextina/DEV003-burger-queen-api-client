@@ -12,6 +12,7 @@ import { RegisterComponent } from './register/register.component';
 import { AdminComponent } from './admin/admin.component';
 import { UpdatepopupComponent } from './updatepopup/updatepopup.component';
 import { KitchenComponent } from './kitchen/kitchen.component';
+import { LogoutButtonComponent } from './logout-button/logout-button.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { KitchenComponent } from './kitchen/kitchen.component';
     AdminComponent,
     UpdatepopupComponent,
     KitchenComponent,
+    LogoutButtonComponent,
   ],
 
   imports: [

@@ -14,7 +14,7 @@ export class KitchenComponent implements OnInit {
   constructor(
     private orderHttpSvc: OrderService,
     private toastr: ToastrService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.orderHttpSvc.getOrder('pending').subscribe({
@@ -25,8 +25,21 @@ export class KitchenComponent implements OnInit {
         console.log(res);
       },
       error: () => {
-        this.toastr.error('Loading error orders');
+        this.toastr.error('Loading error orders.');
       },
     });
   }
+
+  OnClickDone(order: Order): void {
+    const id = order.id || '';
+    this.orderHttpSvc.patchOrder(id, 'delivering').subscribe({
+      next: (res) => {
+        console.log(res);
+      },
+      error: () => {
+        this.toastr.error('Something went wrong.')
+      },
+    });
+  }
+
 }
