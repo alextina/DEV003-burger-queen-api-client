@@ -32,6 +32,11 @@ const routes: Routes = [
     path: 'kitchen',
     component: KitchenComponent,
     canActivate: [authGuardKitchen],
+  },
+  {
+    path: 'delivering',
+    loadChildren: () => import('./delivering/delivering.module').then(m => m.DeliveringModule),
+    canActivate: [authGuardMenu]
   }
 ];
 

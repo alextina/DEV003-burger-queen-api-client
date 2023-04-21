@@ -1,7 +1,7 @@
 <section>
   <header>
     <nav>
-      <button><span class="material-icons">notifications</span>Done</button>
+      <button (click)="goToDelivering()"><span class="material-icons">notifications</span>Done</button>
       <button (click)="openModal()"><span class="material-icons">restaurant_menu</span>
         Order <div *ngIf="qty$ | async" class="notification">{{qty$ | async}}</div>
       </button>
@@ -15,6 +15,10 @@
       <button (click)="changeProductType('breakfast')" [class.active]="active1">Breakfast</button>
       <button (click)="changeProductType('lunch')" [class.active]="active2">Lunch</button>
     </nav>
+    <div class="client-table">
+      <input type="text" placeholder="Client's name" class="input-form" [(ngModel)]="client">
+      <input type="number" placeholder="Client's table" class="input-form" [(ngModel)]="table">
+    </div>
     <section class="container-products_section">
       <article *ngFor="let product of filteredProducts" class="product">
         <img src="{{product.image}}">
@@ -23,10 +27,6 @@
         <button (click)="onClick(product)">Add</button>
       </article>
     </section>
-    <div class="client-table">
-      <input type="text" placeholder="Client's name" class="input-form" [(ngModel)]="client">
-      <input type="number" placeholder="Client's table" class="input-form" [(ngModel)]="table">
-    </div>
   </section>
 </section>
 <section>

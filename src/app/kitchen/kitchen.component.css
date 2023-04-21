@@ -27,7 +27,7 @@ header nav {
     right: 0;
 }
 
-header nav button {
+/* header nav button {
     background-color: var(--second-dark-color);
     color: var(--main-light-color);
     display: flex;
@@ -40,7 +40,7 @@ header nav button {
 header nav button:active {
     background-color: var(--main-color);
     color: var(--main-dark-color);
-}
+} */
 
 /* Ordenes */
 
