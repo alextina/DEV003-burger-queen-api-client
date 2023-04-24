@@ -12,7 +12,8 @@ import { RegisterComponent } from './register/register.component';
 import { AdminComponent } from './admin/admin.component';
 import { UpdatepopupComponent } from './updatepopup/updatepopup.component';
 import { KitchenComponent } from './kitchen/kitchen.component';
-import { LogoutButtonComponent } from './logout-button/logout-button.component';
+// import { LogoutButtonComponent } from './shared/logout-button/logout-button.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,6 @@ import { LogoutButtonComponent } from './logout-button/logout-button.component';
     AdminComponent,
     UpdatepopupComponent,
     KitchenComponent,
-    LogoutButtonComponent,
   ],
 
   imports: [
@@ -32,8 +32,9 @@ import { LogoutButtonComponent } from './logout-button/logout-button.component';
     ReactiveFormsModule,
     HttpClientModule,
     ToastrModule.forRoot(),
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
