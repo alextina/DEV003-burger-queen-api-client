@@ -27,8 +27,8 @@ export class MenuComponent implements OnInit {
     private toastr: ToastrService,
     private service: ProductsService,
     private orderSvc: SharedOrderService,
-    private router: Router,
-  ) { }
+    private router: Router
+  ) {}
 
   //método que se carga al iniciar el componente
   ngOnInit() {
@@ -96,5 +96,4 @@ export class MenuComponent implements OnInit {
   goToDelivering(): void {
     this.router.navigate(['delivering']);
   }
-
 }

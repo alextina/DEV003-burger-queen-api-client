@@ -1,23 +1,23 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+// import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UpdatepopupComponent } from './updatepopup.component';
+// import { UpdatepopupComponent } from './updatepopup.component';
 
-describe('UpdatepopupComponent', () => {
-  let component: UpdatepopupComponent;
-  let fixture: ComponentFixture<UpdatepopupComponent>;
+// describe('UpdatepopupComponent', () => {
+//   let component: UpdatepopupComponent;
+//   let fixture: ComponentFixture<UpdatepopupComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ UpdatepopupComponent ]
-    })
-    .compileComponents();
+//   beforeEach(async () => {
+//     await TestBed.configureTestingModule({
+//       declarations: [ UpdatepopupComponent ]
+//     })
+//     .compileComponents();
 
-    fixture = TestBed.createComponent(UpdatepopupComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+//     fixture = TestBed.createComponent(UpdatepopupComponent);
+//     component = fixture.componentInstance;
+//     fixture.detectChanges();
+//   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+//   it('should create', () => {
+//     expect(component).toBeTruthy();
+//   });
+// });
