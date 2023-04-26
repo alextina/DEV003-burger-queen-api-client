@@ -1,0 +1,14 @@
+<header>
+    <nav>
+        <button *ngIf="path == '/menu'" (click)="goToDelivering()"><span
+                class="material-icons">notifications</span>Done</button>
+        <button *ngIf="path == '/delivering'" (click)="goToMenu()"><span
+                class="material-icons">restaurant_menu</span>Menu</button>
+        <button *ngIf="path == '/menu'" (click)="openModal()"><span class="material-icons">summarize</span>
+            Order
+            <div *ngIf="qty$ | async" class="notification">{{qty$ | async}}</div>
+        </button>
+        <app-logout-button></app-logout-button>
+    </nav>
+    <h1>Burger Queen</h1>
+</header>

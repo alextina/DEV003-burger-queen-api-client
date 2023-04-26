@@ -19,7 +19,7 @@ export class SharedOrderService {
   constructor(
     private orderHttpSvc: OrderService,
     private toastr: ToastrService
-  ) {}
+  ) { }
 
   private productsOrderSubject = new BehaviorSubject<ProductsQty[]>([]);
   private totalSubject = new BehaviorSubject<number>(0);
@@ -75,7 +75,6 @@ export class SharedOrderService {
     // enviando orden al servidor
     this.orderHttpSvc.postOrder(orderObj).subscribe({
       error: (error) => {
-        console.log(error);
         this.toastr.error(error.error, 'something went wrong');
       },
     });
@@ -114,7 +113,6 @@ export class SharedOrderService {
     if (product) {
       if (operations === 'minus' && product.qty > 0) {
         product.qty = product.qty - 1;
-        console.log(this.productsOrder);
         this.totalCount();
         this.qtyAddedProducts();
       }

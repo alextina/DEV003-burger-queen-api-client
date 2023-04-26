@@ -45,7 +45,7 @@ export class OrderComponent implements OnInit {
   // enviar orden a carrito de compras
   sendOrder() {
     this.orderSvc.onClickAddOrder(this.clientName, this.clientTable);
-    this.order$.subscribe((res) => console.log(res));
+
     this.orderSvc.resetProductsOrder();
     this.closeModal();
     this.clientName = '';
