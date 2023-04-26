@@ -17,7 +17,7 @@ export class MenuComponent implements OnInit {
   table!: number | null;
   qty$ = this.orderSvc.qty$;
 
-  // creando variable para el modal
+  // // creando variable para el modal
   modalSwitch!: boolean;
 
   active1: boolean = true;
@@ -28,7 +28,7 @@ export class MenuComponent implements OnInit {
     private service: ProductsService,
     private orderSvc: SharedOrderService,
     private router: Router
-  ) {}
+  ) { }
 
   //método que se carga al iniciar el componente
   ngOnInit() {
@@ -42,7 +42,6 @@ export class MenuComponent implements OnInit {
       next: (res) => {
         this.products = res;
         this.filteredProducts = this.filterProductByType('breakfast');
-        console.log(res);
       },
       error: (err) => {
         this.toastr.error('Loading error products');
@@ -79,13 +78,12 @@ export class MenuComponent implements OnInit {
 
   onClick(product: Products): void {
     this.orderSvc.onClickAddProduct(product);
-    console.log('menu', product);
   }
 
-  // método para abrir modal
-  openModal() {
-    this.modalSwitch = true;
-  }
+  // // método para abrir modal
+  // openModal() {
+  //   this.modalSwitch = true;
+  // }
   // *******************************************
   // recibiendo emision de eventos de order cuando envia el formulario
   resetNameTableMenu() {
@@ -93,7 +91,7 @@ export class MenuComponent implements OnInit {
     this.table = null;
   }
 
-  goToDelivering(): void {
-    this.router.navigate(['delivering']);
-  }
+  // goToDelivering(): void {
+  //   this.router.navigate(['delivering']);
+  // }
 }

@@ -1,17 +1,19 @@
 <section>
-    <header>
-        <nav>
-            <button><span class="material-icons">logout</span>Logout</button>
-        </nav>
-        <h1>Burger Queen</h1>
-    </header>
-
-    <section>
-        <article *ngFor="let order of orders">
-            <h3>{{order.client}}</h3>
-            <h3>{{order.tableNum}}</h3>
-            <button (click)="OnClickDelivered(order)">Done</button>
-        </article>
+    <app-header></app-header>
+    <section class="order-container">
+        <h2>Orders List:</h2>
+        <section class="order-content">
+            <article class="order">
+                <h3 class="title">Name</h3>
+                <h3 class="title">Table</h3>
+                <h3 class="button-class title">Delivered</h3>
+            </article>
+            <article *ngFor="let order of orders" class="order">
+                <h3>{{order.client}}</h3>
+                <h3>{{order.tableNum}}</h3>
+                <button class="button-class" (click)="onClickDelivered(order)">Delivered</button>
+            </article>
+        </section>
     </section>
 
     <app-delivered></app-delivered>

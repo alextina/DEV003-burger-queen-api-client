@@ -1,0 +1,70 @@
+h2 {
+    color: var(--main-light-color);
+    font-size: 32px;
+}
+
+h3 {
+    color: var(--main-light-color);
+    font-size: 28px;
+}
+
+.order-container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.order-content {
+    width: 100%;
+}
+
+.order-container h2 {
+    align-self: flex-start;
+    margin-bottom: 25px;
+}
+
+.order {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: solid 1px var(--main-light-color);
+}
+
+.order:last-child {
+    border-bottom: none;
+    padding-bottom: 50px;
+}
+
+.title {
+    color: var(--main-color);
+}
+
+.order :first-child {
+    width: 30%;
+}
+
+.order :nth-child(2) {
+    width: 20%;
+}
+
+.order :nth-child(3) {
+    width: 20%;
+}
+
+.button-class {
+    margin: auto;
+}
+
+button {
+    width: auto;
+    padding: auto 15px;
+    display: flex;
+    align-items: center;
+    background-color: var(--main-color);
+}

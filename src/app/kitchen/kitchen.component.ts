@@ -16,13 +16,10 @@ export class KitchenComponent implements OnInit {
     private toastr: ToastrService
   ) { }
 
-  ngOnInit(): void {
+  getPending(): void {
     this.orderHttpSvc.getOrder('pending').subscribe({
       next: (res) => {
         this.orders = res;
-        // filtrar pendientes
-        // filtrar delivery (vista mesero)
-        console.log(res);
       },
       error: () => {
         this.toastr.error('Loading error orders.');
@@ -30,16 +27,20 @@ export class KitchenComponent implements OnInit {
     });
   }
 
+  ngOnInit(): void {
+    this.getPending();
+    setInterval(() => {
+      this.getPending();
+    }, 10000);
+  }
+
   OnClickDone(order: Order): void {
     const id = order.id || '';
     this.orderHttpSvc.patchOrder(id, 'delivering').subscribe({
-      next: (res) => {
-        console.log(res);
-      },
       error: () => {
         this.toastr.error('Something went wrong.')
       },
     });
+    this.getPending();
   }
-
 }

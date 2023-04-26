@@ -1,14 +1,5 @@
 <section>
-  <header>
-    <nav>
-      <button (click)="goToDelivering()"><span class="material-icons">notifications</span>Done</button>
-      <button (click)="openModal()"><span class="material-icons">restaurant_menu</span>
-        Order <div *ngIf="qty$ | async" class="notification">{{qty$ | async}}</div>
-      </button>
-      <app-logout-button></app-logout-button>
-    </nav>
-    <h1>Burger Queen</h1>
-  </header>
+  <app-header></app-header>
   <section class="container-products">
     <nav class="container-products_nav">
       <h3>Food category: </h3>

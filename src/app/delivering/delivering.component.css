@@ -1,43 +1,68 @@
-header {
-    height: 290px;
-    width: 100%;
-    background-image: linear-gradient(rgba(30, 30, 30, 0.25),
-            rgba(30, 30, 30, 0.75)),
-        url("../../assets/burgers-login.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: flex;
-    align-items: self-end;
-    justify-content: center;
-}
-
-header h1 {
+h2 {
     color: var(--main-light-color);
-    font-weight: 900;
-    padding: 20px;
-    text-align: center;
-    font-size: 75px;
-    line-height: 1;
+    font-size: 32px;
 }
 
-header nav {
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
-header nav button {
-    background-color: var(--second-dark-color);
+h3 {
     color: var(--main-light-color);
+    font-size: 28px;
+}
+
+.order-container {
+    width: 80%;
     display: flex;
-    flex-direction: row;
-    gap: 10px;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: auto;
+    margin-top: 50px;
+    border-bottom: solid 3px var(--main-color);
 }
 
-header nav button:active {
+.order-container h2 {
+    align-self: flex-start;
+    margin-bottom: 25px;
+}
+
+.order-content {
+    width: 100%;
+}
+
+.order {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: solid 1px var(--main-light-color);
+}
+
+.order:last-child {
+    border-bottom: none;
+    padding-bottom: 50px;
+}
+
+.title {
+    color: var(--main-color);
+}
+
+.order :first-child {
+    width: 35%;
+}
+
+
+.order :nth-child(2) {
+    width: 30%;
+}
+
+.button-class {
+    margin: auto;
+}
+
+button {
     background-color: var(--main-color);
-    color: var(--main-dark-color);
+    width: auto;
+    padding: auto 10px;
+    text-align: center;
 }

@@ -36,13 +36,11 @@ export class LoginComponent {
   onSubmit(): void {
     // objeto formData con propiedades email y password
     const formData = this.loginForm.value;
-    // console.log(this.loginForm.value);
 
     // accediendo al método "methodLogin" de la clase AuthService (app/service/auth.service.ts)donde accede a su método subscribe (El cual estará atento a cualquier emisión de datos que produzca ese servicio) que recide un objeto con los métodos next y error y se ejecutarán segun la respuesta del servidor
     this.service.methodLogin(formData.email, formData.password).subscribe({
       next: (res) => {
         // Creando la variable "token" en sessionStorage con el valor de la propiedad accessToken del objeto de respuesta
-        console.log(res);
         sessionStorage.setItem('token', res.accessToken);
         sessionStorage.setItem('idUser', res.user.id);
         sessionStorage.setItem('role', res.user.role);
@@ -54,12 +52,10 @@ export class LoginComponent {
         } else if (role === 'chef') {
           this.router.navigate(['kitchen'])
         } else { this.router.navigate(['']) }
-        console.log(res.accessToken);
         // Ruteando al endpoint menu
         // this.router.navigate(['menu']);
       },
       error: (error) => {
-        console.log(error);
         if (error.status === 400) {
           this.toastr.error(error.error, 'Invalid credentials');
         } else {

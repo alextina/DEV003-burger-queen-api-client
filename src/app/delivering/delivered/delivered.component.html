@@ -1,1 +1,18 @@
-<p>delivered works!</p>
+<section class="order-container">
+    <h2>Orders delivered to the customers:</h2>
+    <section class="order-content">
+        <article class="order">
+            <h3 class="title">Name</h3>
+            <h3 class="title">Table</h3>
+            <h3 class="title">Price</h3>
+            <h3 class="button-class title">Canceled</h3>
+        </article>
+        <article *ngFor="let order of orders" class="order">
+            <h3>{{order.client}}</h3>
+            <h3>{{order.tableNum}}</h3>
+            <h3>{{getTotal(order) | currency}}</h3>
+            <button (click)="onClickCanceled(order)" class="button-class"><span
+                    class="material-icons">done</span></button>
+        </article>
+    </section>
+</section>

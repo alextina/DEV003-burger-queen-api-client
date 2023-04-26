@@ -16,11 +16,10 @@ export class DeliveringComponent {
     private toastr: ToastrService,
   ) { }
 
-  ngOnInit(): void {
+  getDelivering(): void {
     this.orderHttpSvc.getOrder('delivering').subscribe({
       next: (res) => {
         this.orders = res;
-        console.log(res);
       },
       error: () => {
         this.toastr.error('Loading error delivering orders.')
@@ -28,16 +27,21 @@ export class DeliveringComponent {
     });
   }
 
-  OnClickDelivered(order: Order): void {
+  ngOnInit(): void {
+    this.getDelivering();
+    setInterval(() => {
+      this.getDelivering()
+    }, 10000)
+  }
+
+  onClickDelivered(order: Order): void {
     const id = order.id || '';
     this.orderHttpSvc.patchOrder(id, 'delivered').subscribe({
-      next: (res) => {
-        console.log(res);
-      },
       error: () => {
         this.toastr.error('Something went wrong.')
       },
     });
+    this.getDelivering();
   }
 
 }
