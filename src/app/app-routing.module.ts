@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { AdminComponent } from './admin/admin.component';
 import { KitchenComponent } from './kitchen/kitchen.component';
 import {
   authGuardAdmin,
@@ -24,11 +23,6 @@ const routes: Routes = [
     canActivate: [authGuardMenu],
   },
   {
-    path: 'admin',
-    component: AdminComponent,
-    canActivate: [authGuardAdmin],
-  },
-  {
     path: 'kitchen',
     component: KitchenComponent,
     canActivate: [authGuardKitchen],
@@ -37,6 +31,11 @@ const routes: Routes = [
     path: 'delivering',
     loadChildren: () => import('./delivering/delivering.module').then(m => m.DeliveringModule),
     canActivate: [authGuardMenu]
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
+    canActivate: [authGuardAdmin]
   }
 ];
 

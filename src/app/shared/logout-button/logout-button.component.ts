@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-logout-button',
@@ -11,7 +10,6 @@ export class LogoutButtonComponent {
 
   constructor(
     private router: Router,
-    private toastr: ToastrService
   ) { }
 
   clickLogout() {

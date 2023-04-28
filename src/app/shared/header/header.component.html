@@ -1,8 +1,10 @@
 <header>
     <nav>
-        <button *ngIf="path == '/menu'" (click)="goToDelivering()"><span
+        <button *ngIf="role == 'admin'" (click)="goToAdmin()"><span
+                class="material-icons">admin_panel_settings</span>Admin</button>
+        <button *ngIf="path == '/menu' || path == '/admin'" (click)="goToDelivering()"><span
                 class="material-icons">notifications</span>Done</button>
-        <button *ngIf="path == '/delivering'" (click)="goToMenu()"><span
+        <button *ngIf="path == '/delivering' || path == '/admin'" (click)="goToMenu()"><span
                 class="material-icons">restaurant_menu</span>Menu</button>
         <button *ngIf="path == '/menu'" (click)="openModal()"><span class="material-icons">summarize</span>
             Order

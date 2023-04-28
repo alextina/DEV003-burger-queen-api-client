@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { ProductsService } from '../service/products.service';
-import { Router } from '@angular/router';
 import { Products } from '../interfaces/products.interface';
 import { SharedOrderService } from '../service/shared-order.service';
 
@@ -27,7 +26,6 @@ export class MenuComponent implements OnInit {
     private toastr: ToastrService,
     private service: ProductsService,
     private orderSvc: SharedOrderService,
-    private router: Router
   ) { }
 
   //método que se carga al iniciar el componente

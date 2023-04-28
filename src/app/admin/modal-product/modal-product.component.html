@@ -1,0 +1,37 @@
+<section>
+    <header>
+        <h1>Product</h1>
+        <span (click)="closeProductModal()" class="material-icons">close</span>
+    </header>
+    <form [formGroup]="modalProductForm">
+        <article>
+            <div>
+                <span class="material-icons">lunch_dining</span>
+                <input formControlName="name" type="text" placeholder="Name">
+            </div>
+        </article>
+        <article>
+            <div>
+                <span class="material-icons">inventory</span>
+                <select formControlName="type" name="type">
+                    <option disabled value="type">Type</option>
+                    <option value="breakfast">Breakfast</option>
+                    <option value="lunch">Lunch</option>
+                </select>
+            </div>
+        </article>
+        <article>
+            <div>
+                <span class="material-icons">attach_money</span>
+                <input formControlName="price" type="text" placeholder="Price">
+            </div>
+        </article>
+        <article>
+            <div>
+                <span class="material-icons">add_photo_alternate</span>
+                <input formControlName="image" type="text" placeholder="Image URL">
+            </div>
+        </article>
+    </form>
+    <button (click)="sendProduct()" [disabled]="!modalProductForm.valid">Send</button>
+</section>

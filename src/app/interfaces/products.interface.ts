@@ -1,9 +1,9 @@
 // Esquema para tipar  cada producto
 export interface Products {
-  _id: string;
+  id: string;
   name: string;
   price: number;
-  image: URL;
+  image: string;
   type: string;
   dateEntry: Date;
 }
