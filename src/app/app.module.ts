@@ -9,10 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { AdminComponent } from './admin/admin.component';
 import { UpdatepopupComponent } from './updatepopup/updatepopup.component';
 import { KitchenComponent } from './kitchen/kitchen.component';
-// import { LogoutButtonComponent } from './shared/logout-button/logout-button.component';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
@@ -20,7 +18,6 @@ import { SharedModule } from './shared/shared.module';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    AdminComponent,
     UpdatepopupComponent,
     KitchenComponent,
   ],
@@ -37,4 +34,4 @@ import { SharedModule } from './shared/shared.module';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

@@ -14,7 +14,7 @@
         <article>
           <div class="input-form">
             <span class="material-icons mail-icon">mail_outline</span>
-            <input formControlName="email" placeholder="Email">
+            <input type="email" formControlName="email" placeholder="Email">
           </div>
           <!-- Utilizando ngIf para mostrar/ocultar errores, con el método controls asociado a la variable "email" -->
           <div class="error" *ngIf="loginForm.controls['email'].hasError('email')">
@@ -28,7 +28,7 @@
           <div class="input-form">
             <span class="material-icons mail-icon">lock_outline </span>
             <!-- Usando atributos de enlace de datos para cambiar el atributo type en función de la variable "hide" -->
-            <input [type]="hide ? 'password' : 'text'" matInput formControlName="password" placeholder="Password">
+            <input [type]="hide ? 'password' : 'text'" formControlName="password" placeholder="Password">
             <!-- asignando método togglePassword al evento click -->
             <span class="material-icons eye-icon" (click)="togglePassword()">{{ hide ? 'visibility_off'
               :'visibility'}}

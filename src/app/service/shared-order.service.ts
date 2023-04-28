@@ -15,6 +15,8 @@ export class SharedOrderService {
   order: Order[] = [];
   // comunicar componentes en angular (inputs y outputs)
   $modal = new EventEmitter<any>();
+  $modalUser = new EventEmitter<any>();
+  $modalProduct = new EventEmitter<any>();
 
   constructor(
     private orderHttpSvc: OrderService,
@@ -44,7 +46,7 @@ export class SharedOrderService {
 
   private addToProduct(product: Products): void {
     const isProductInOrder: ProductsQty | undefined = this.productsOrder.find(
-      (el) => el.product._id === product._id
+      (el) => el.product.id === product.id
     );
     if (isProductInOrder) {
       isProductInOrder.qty += 1;
@@ -99,7 +101,7 @@ export class SharedOrderService {
 
   deleteProduct(id: string): void {
     this.productsOrder = this.productsOrder.filter((el) => {
-      return el.product._id !== id;
+      return el.product.id !== id;
     });
     this.productsOrderSubject.next(this.productsOrder);
     this.totalCount();
@@ -108,7 +110,7 @@ export class SharedOrderService {
 
   qtyOperations(operations: string, id: string) {
     const product = this.productsOrder.find((el) => {
-      return el.product._id === id;
+      return el.product.id === id;
     });
     if (product) {
       if (operations === 'minus' && product.qty > 0) {
