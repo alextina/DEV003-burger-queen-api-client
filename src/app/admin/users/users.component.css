@@ -1,0 +1,60 @@
+.add-user {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+button {
+    background-color: var(--main-color);
+}
+
+button:active {
+    background-color: var(--accent-color);
+}
+
+h2 {
+    width: 100%;
+    color: var(--main-color);
+    font-size: 32px;
+    padding-bottom: 25px;
+    border-bottom: solid 3px var(--accent-color);
+}
+
+.users-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.users-content article {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 25px 0;
+}
+
+.users-content h3 {
+    width: 50%;
+    font-size: 24px;
+}
+
+.users-content div {
+    display: flex;
+    gap: 25px
+}
+
+@media (max-width: 751px) {
+
+    button {
+        font-size: 0;
+        gap: 0;
+        width: auto;
+        height: 65px;
+        border-radius: 20px;
+    }
+
+    button .material-icons {
+        font-size: 30px;
+    }
+
+}

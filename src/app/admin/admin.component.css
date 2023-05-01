@@ -1,0 +1,29 @@
+.admin-container {
+    padding-bottom: 5%;
+}
+
+.buttons-container {
+    width: 100%;
+    padding: 5%;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-container {
+    width: 90%;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    color: var(--main-light-color);
+    margin: auto;
+    background-color: var(--second-dark-color);
+    border-radius: 25px;
+}
+
+button {
+    background-color: var(--main-color);
+    width: 200px;
+}

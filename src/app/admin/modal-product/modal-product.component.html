@@ -1,17 +1,17 @@
-<section>
+<section class="modal-product">
     <header>
-        <h1>Product</h1>
-        <span (click)="closeProductModal()" class="material-icons">close</span>
+        <h2>Product</h2>
+        <span (click)="closeProductModal()" class="material-icons close">close</span>
     </header>
     <form [formGroup]="modalProductForm">
         <article>
-            <div>
+            <div class="input-form">
                 <span class="material-icons">lunch_dining</span>
                 <input formControlName="name" type="text" placeholder="Name">
             </div>
         </article>
         <article>
-            <div>
+            <div class="input-form">
                 <span class="material-icons">inventory</span>
                 <select formControlName="type" name="type">
                     <option disabled value="type">Type</option>
@@ -21,13 +21,13 @@
             </div>
         </article>
         <article>
-            <div>
+            <div class="input-form">
                 <span class="material-icons">attach_money</span>
                 <input formControlName="price" type="text" placeholder="Price">
             </div>
         </article>
         <article>
-            <div>
+            <div class="input-form">
                 <span class="material-icons">add_photo_alternate</span>
                 <input formControlName="image" type="text" placeholder="Image URL">
             </div>
@@ -35,3 +35,4 @@
     </form>
     <button (click)="sendProduct()" [disabled]="!modalProductForm.valid">Send</button>
 </section>
+<div class="shadow" (click)="closeProductModal()"></div>

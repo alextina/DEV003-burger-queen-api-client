@@ -1,0 +1,118 @@
+.shadow {
+    background-color: var(--main-dark-color);
+    opacity: 0.75;
+    mix-blend-mode: multiply;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+}
+
+.modal-user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 0;
+    padding: 25px;
+    position: fixed;
+    bottom: 0;
+    background-color: var(--main-dark-color);
+    border-radius: 25px 25px 0 0;
+    width: 100%;
+    height: 75%;
+    z-index: 1;
+    transform: translateY(100%);
+    animation: upMove 0.5s ease-in-out forwards;
+    overflow-y: auto;
+}
+
+.modal-user header {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 25px;
+    border-bottom: solid 3px var(--accent-color);
+
+}
+
+h2 {
+    font-size: 32px;
+    color: var(--main-color);
+}
+
+.close {
+    font-size: 40px;
+    cursor: pointer;
+    color: var(--main-light-color);
+}
+
+.modal-user form {
+    width: 100%;
+    padding: 0 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+
+button {
+    width: 200px;
+    margin: auto;
+}
+
+button:enabled {
+    background-color: var(--main-color);
+    color: var(--main-dark-color);
+}
+
+button:active {
+    background-color: var(--accent-color);
+    color: var(--main-light-color);
+}
+
+input,
+select {
+    width: 90%;
+}
+
+@media (min-width: 1000px) {
+
+    .modal-user {
+        position: fixed;
+        right: 0;
+        width: 75%;
+        min-height: 100%;
+        border-radius: 25px 0 0 25px;
+        justify-content: center;
+        padding-top: 50px;
+        transform: translateX(100%);
+        animation: rightMove 0.5s ease-in-out forwards;
+    }
+
+}
+
+@keyframes upMove {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes rightMove {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}

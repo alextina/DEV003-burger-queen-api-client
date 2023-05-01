@@ -1,13 +1,13 @@
 <app-header></app-header>
-<section>
-  <section>
-    <button class="" (click)="changeByAdmin('users')">Users</button>
-    <button class="" (click)="changeByAdmin('products')">Products</button>
-  </section>
-  <section>
-    <app-users *ngIf="viewValue==='users'"></app-users>
-    <app-products *ngIf="viewValue == 'products'"></app-products>
-  </section>
+<section class="admin-container">
+    <section class="buttons-container">
+        <button (click)="changeByAdmin('users')">Users</button>
+        <button (click)="changeByAdmin('products')">Products</button>
+    </section>
+    <section class="info-container">
+        <app-users *ngIf="viewValue == 'users'"></app-users>
+        <app-products *ngIf="viewValue == 'products'"></app-products>
+    </section>
 </section>
 <div *ngIf="userSwitch == true">
   <app-modal-user></app-modal-user>

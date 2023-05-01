@@ -62,9 +62,14 @@ h3 {
 }
 
 button {
-    width: auto;
-    padding: auto 15px;
-    display: flex;
-    align-items: center;
     background-color: var(--main-color);
+    gap: 0;
+    width: 65px;
+    height: 65px;
+    border-radius: 20px;
+    padding: 0;
+}
+
+button .material-icon {
+    font-size: 30px;
 }
