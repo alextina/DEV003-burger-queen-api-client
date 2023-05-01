@@ -1,53 +1,53 @@
 <section>
-    <header>
-        <h1>Users</h1>
-        <span (click)="closeUserModal()" class="material-icons">close</span>
-    </header>
-    <form [formGroup]="modalUserForm">
-        <article>
-            <div>
-                <span class="material-icons">person</span>
-                <input type="text" formControlName="name" placeholder="Name">
-            </div>
-        </article>
-        <article>
-            <div>
-                <span class="material-icons">assignment_ind</span>
-                <select formControlName="role" name="role">
-                    <option disabled value="role">Role</option>
-                    <option value="waiter">Waiter</option>
-                    <option value="chef">Chef</option>
-                    <option value="admin">Admin</option>
-                </select>
-            </div>
-        </article>
-        <article>
-            <div>
-                <span class="material-icons">email</span>
-                <input type="text" formControlName="email" placeholder="E-mail">
-            </div>
-            <div class="error" *ngIf="modalUserForm.controls['email'].hasError('email')">
-                <span class="material-icons">
-                    error_outline
-                </span>
-                <p>Please enter a valid email address.</p>
-            </div>
-        </article>
-        <article>
-            <div>
-                <span class="material-icons mail-icon">lock_outline </span>
-                <input [type]="hide ? 'password' : 'text'" formControlName="password" placeholder="Password">
-                <span class="material-icons eye-icon" (click)="togglePassword()">{{ hide ? 'visibility_off'
-                    :'visibility'}}
-                </span>
-            </div>
-            <div class="error" *ngIf="modalUserForm.controls['password'].hasError('minlength')">
-                <span class="material-icons">
-                    error_outline
-                </span>
-                <p>Password must be at least 6 characters long.</p>
-            </div>
-        </article>
-        <button [disabled]="!modalUserForm.valid" (click)="sendUser()">Save</button>
-    </form>
+  <header>
+    <h1>Users</h1>
+    <span (click)="closeUserModal()" class="material-icons">close</span>
+  </header>
+  <form [formGroup]="modalUserForm">
+    <article>
+      <div>
+        <span class="material-icons">person</span>
+        <input type="text" formControlName="name" placeholder="Name">
+      </div>
+    </article>
+    <article>
+      <div>
+        <span class="material-icons">assignment_ind</span>
+        <select formControlName="role" name="role">
+          <option disabled value="role">Role</option>
+          <option value="waiter">Waiter</option>
+          <option value="chef">Chef</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
+    </article>
+    <article>
+      <div>
+        <span class="material-icons">email</span>
+        <input type="text" formControlName="email" placeholder="E-mail">
+      </div>
+      <div class="error" *ngIf="modalUserForm.controls['email'].hasError('email')">
+        <span class="material-icons">
+          error_outline
+        </span>
+        <p>Please enter a valid email address.</p>
+      </div>
+    </article>
+    <article>
+      <div>
+        <span class="material-icons mail-icon">lock_outline </span>
+        <input [type]="hide ? 'password' : 'text'" formControlName="password" placeholder="Password">
+        <span class="material-icons eye-icon" (click)="togglePassword()">{{ hide ? 'visibility_off'
+          :'visibility'}}
+        </span>
+      </div>
+      <div class="error" *ngIf="modalUserForm.controls['password'].hasError('minlength')">
+        <span class="material-icons">
+          error_outline
+        </span>
+        <p>Password must be at least 6 characters long.</p>
+      </div>
+    </article>
+    <button [disabled]="!modalUserForm.valid" (click)="sendUser()">Save</button>
+  </form>
 </section>

@@ -21,7 +21,7 @@ export class SharedOrderService {
   constructor(
     private orderHttpSvc: OrderService,
     private toastr: ToastrService
-  ) { }
+  ) {}
 
   private productsOrderSubject = new BehaviorSubject<ProductsQty[]>([]);
   private totalSubject = new BehaviorSubject<number>(0);
@@ -134,4 +134,6 @@ export class SharedOrderService {
     const qty: number = this.productsOrder.reduce((a, b) => (a = a + b.qty), 0);
     this.qtySubject.next(qty);
   }
+
+  
 }

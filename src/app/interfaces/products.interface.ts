@@ -5,7 +5,7 @@ export interface Products {
   price: number;
   image: string;
   type: string;
-  dateEntry: Date;
+  dateEntry?: Date;
 }
 
 // Esquema para tipar el producto de la orden
@@ -13,4 +13,3 @@ export interface ProductsQty {
   qty: number;
   product: Products;
 }
-

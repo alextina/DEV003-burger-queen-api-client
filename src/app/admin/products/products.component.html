@@ -1,29 +1,29 @@
 <section>
-    <div>
-        <button (click)="openProductModal()"><span class="material-icons">add_shopping_cart</span>Add product</button>
-    </div>
-    <div>
-        <h2>Breakfast</h2>
-        <section>
-            <article *ngFor="let product of breakfast">
-                <h3>{{product.name}}</h3>
-                <div>
-                    <button><span class="material-icons">edit</span>Edit</button>
-                    <button><span class="material-icons">delete</span>Delete</button>
-                </div>
-            </article>
-        </section>
-    </div>
-    <div>
-        <h2>Lunch</h2>
-        <section>
-            <article *ngFor="let product of lunch">
-                <h3>{{product.name}}</h3>
-                <div>
-                    <button><span class="material-icons">edit</span>Edit</button>
-                    <button><span class="material-icons">delete</span>Delete</button>
-                </div>
-            </article>
-        </section>
-    </div>
+  <div>
+    <button (click)="openProductModal()"><span class="material-icons">add_shopping_cart</span>Add product</button>
+  </div>
+  <div>
+    <h2>Breakfast</h2>
+    <section>
+      <article *ngFor="let product of breakfast">
+        <h3>{{product.name}}</h3>
+        <div>
+          <button (click)="onClickProductEdit(product)"><span class="material-icons">edit</span>Edit</button>
+          <button><span class="material-icons">delete</span>Delete</button>
+        </div>
+      </article>
+    </section>
+  </div>
+  <div>
+    <h2>Lunch</h2>
+    <section>
+      <article *ngFor="let product of lunch">
+        <h3>{{product.name}}</h3>
+        <div>
+          <button (click)="onClickProductEdit(product)"><span class="material-icons">edit</span>Edit</button>
+          <button><span class="material-icons">delete</span>Delete</button>
+        </div>
+      </article>
+    </section>
+  </div>
 </section>
