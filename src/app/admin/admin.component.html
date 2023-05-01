@@ -1,8 +1,8 @@
 <app-header></app-header>
 <section class="admin-container">
     <section class="buttons-container">
-        <button class="" (click)="changeByAdmin('users')">Users</button>
-        <button class="" (click)="changeByAdmin('products')">Products</button>
+        <button (click)="changeByAdmin('users')">Users</button>
+        <button (click)="changeByAdmin('products')">Products</button>
     </section>
     <section class="info-container">
         <app-users *ngIf="viewValue == 'users'"></app-users>
@@ -10,8 +10,8 @@
     </section>
 </section>
 <div *ngIf="userSwitch == true">
-    <app-modal-user></app-modal-user>
+  <app-modal-user></app-modal-user>
 </div>
 <div *ngIf="productSwitch == true">
-    <app-modal-product></app-modal-product>
+  <app-modal-product></app-modal-product>
 </div>

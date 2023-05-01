@@ -7,8 +7,9 @@ import { Order } from '../interfaces/order.interface';
   providedIn: 'root',
 })
 export class OrderService {
-  constructor(private http: HttpClient) { }
-  apiurl = 'https://burger-queen-server-mock-21hr.onrender.com/orders';
+  constructor(private http: HttpClient) {}
+  // apiurl = 'https://burger-queen-server-mock-21hr.onrender.com/orders';
+  apiurl = 'http://localhost:8080/orders';
   httpOptions = {
     headers: new HttpHeaders({
       // Authorization es una propiedad, con el valor del token que reicibimos al iniciar sesión en el login
@@ -21,10 +22,17 @@ export class OrderService {
   }
 
   getOrder(status: string): Observable<Order[]> {
-    return this.http.get<Order[]>(`${this.apiurl}?status=${status}&_sort=dataEntry&_order=asc`, this.httpOptions);
+    return this.http.get<Order[]>(
+      `${this.apiurl}?status=${status}&_sort=dataEntry&_order=asc`,
+      this.httpOptions
+    );
   }
 
   patchOrder(id: string, status: string): Observable<Order> {
-    return this.http.patch<Order>(`${this.apiurl}/${id}`, { status: status }, this.httpOptions)
+    return this.http.patch<Order>(
+      `${this.apiurl}/${id}`,
+      { status: status },
+      this.httpOptions
+    );
   }
 }

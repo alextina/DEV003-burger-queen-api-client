@@ -8,7 +8,7 @@
             <article *ngFor="let user of waiter">
                 <h3>{{user.name}}</h3>
                 <div>
-                    <button><span class="material-icons">edit</span>Edit</button>
+                    <button (click)="onClickUserEdit(user)><span class="material-icons">edit</span>Edit</button>
                     <button><span class="material-icons">delete</span>Delete</button>
                 </div>
             </article>
@@ -20,7 +20,7 @@
             <article *ngFor="let user of chef">
                 <h3>{{user.name}}</h3>
                 <div>
-                    <button><span class="material-icons">edit</span>Edit</button>
+                    <button (click)="onClickUserEdit(user)><span class="material-icons">edit</span>Edit</button>
                     <button><span class="material-icons">delete</span>Delete</button>
                 </div>
             </article>
@@ -32,7 +32,7 @@
             <article *ngFor="let user of admin">
                 <h3>{{user.name}}</h3>
                 <div>
-                    <button><span class="material-icons">edit</span>Edit</button>
+                    <button (click)="onClickUserEdit(user)><span class="material-icons">edit</span>Edit</button>
                     <button><span class="material-icons">delete</span>Delete</button>
                 </div>
             </article>
