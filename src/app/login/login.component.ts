@@ -40,18 +40,21 @@ export class LoginComponent {
     // accediendo al método "methodLogin" de la clase AuthService (app/service/auth.service.ts)donde accede a su método subscribe (El cual estará atento a cualquier emisión de datos que produzca ese servicio) que recide un objeto con los métodos next y error y se ejecutarán segun la respuesta del servidor
     this.service.methodLogin(formData.email, formData.password).subscribe({
       next: (res) => {
+        console.log(res.accessToken);
         // Creando la variable "token" en sessionStorage con el valor de la propiedad accessToken del objeto de respuesta
         sessionStorage.setItem('token', res.accessToken);
         sessionStorage.setItem('idUser', res.user.id);
         sessionStorage.setItem('role', res.user.role);
-        const role = sessionStorage.getItem('role')
+        const role = sessionStorage.getItem('role');
         if (role === 'admin') {
-          this.router.navigate(['admin'])
+          this.router.navigate(['admin']);
         } else if (role === 'waiter') {
-          this.router.navigate(['menu'])
+          this.router.navigate(['menu']);
         } else if (role === 'chef') {
-          this.router.navigate(['kitchen'])
-        } else { this.router.navigate(['']) }
+          this.router.navigate(['kitchen']);
+        } else {
+          this.router.navigate(['']);
+        }
         // Ruteando al endpoint menu
         // this.router.navigate(['menu']);
       },

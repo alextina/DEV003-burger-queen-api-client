@@ -8,10 +8,12 @@ import { User } from '../interfaces/users.interface';
 })
 export class AuthService {
   // declarando dependencias que usaremos en la clase
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
   // Declarando e inicializando variable apiurl que se usará para consultar a json-server-auth
-  apiurl: string = 'https://burger-queen-server-mock-21hr.onrender.com/login';
-  apiurlUsers: string = 'https://burger-queen-server-mock-21hr.onrender.com/users';
+  // apiurl: string = 'https://burger-queen-server-mock-21hr.onrender.com/login';
+  // apiurlUsers: string = 'https://burger-queen-server-mock-21hr.onrender.com/users';
+  apiurl: string = 'http://localhost:8080/login';
+  apiurlUsers: string = 'http://localhost:8080/users';
   httOptions = {
     headers: new HttpHeaders({
       Authorization: 'Bearer ' + sessionStorage.getItem('token'),
@@ -27,15 +29,19 @@ export class AuthService {
   }
 
   postUser(user: User): Observable<any> {
-    return this.http.post<User>(this.apiurlUsers, user, this.httOptions)
+    return this.http.post<User>(this.apiurlUsers, user, this.httOptions);
   }
 
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.apiurlUsers, this.httOptions)
+    return this.http.get<User[]>(this.apiurlUsers, this.httOptions);
   }
 
   putUser(id: string, user: User): Observable<User> {
-    return this.http.put<User>(`${this.apiurlUsers}/${id}`, user, this.httOptions)
+    return this.http.put<User>(
+      `${this.apiurlUsers}/${id}`,
+      user,
+      this.httOptions
+    );
   }
 
   // métodos utilizados por el componente 'register'
