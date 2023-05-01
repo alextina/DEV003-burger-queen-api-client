@@ -23,20 +23,6 @@ article {
   cursor: pointer;
 }
 
-.error {
-  display: flex;
-  justify-content: space-around;
-  gap: 5px;
-  color: var(--error-color);
-  width: 100%;
-  margin-top: 10px;
-  padding-left: 10px;
-  font-weight: 400;
-}
-.error span {
-  padding-top: 3px;
-}
-
 .background-image {
   display: none;
 }
@@ -71,6 +57,7 @@ article {
     height: 100%;
     position: relative;
   }
+
   .background-image div {
     position: absolute;
     top: 0;
@@ -80,6 +67,7 @@ article {
     background-repeat: no-repeat;
     background-position: center;
   }
+
   .background-image div:first-child {
     z-index: 1;
     animation-name: fadeOut;
@@ -90,10 +78,12 @@ article {
   }
 
   @keyframes fadeOut {
+
     0%,
     35% {
       opacity: 1;
     }
+
     55%,
     100% {
       opacity: 0;

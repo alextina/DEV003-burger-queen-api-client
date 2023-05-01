@@ -1,17 +1,17 @@
-<section>
+<section class="modal-user">
     <header>
-        <h1>Users</h1>
-        <span (click)="closeUserModal()" class="material-icons">close</span>
+        <h2>User</h2>
+        <span (click)="closeUserModal()" class="material-icons close">close</span>
     </header>
     <form [formGroup]="modalUserForm">
         <article>
-            <div>
+            <div class="input-form">
                 <span class="material-icons">person</span>
                 <input type="text" formControlName="name" placeholder="Name">
             </div>
         </article>
         <article>
-            <div>
+            <div class="input-form">
                 <span class="material-icons">assignment_ind</span>
                 <select formControlName="role" name="role">
                     <option disabled value="role">Role</option>
@@ -22,7 +22,7 @@
             </div>
         </article>
         <article>
-            <div>
+            <div class="input-form">
                 <span class="material-icons">email</span>
                 <input type="text" formControlName="email" placeholder="E-mail">
             </div>
@@ -34,7 +34,7 @@
             </div>
         </article>
         <article>
-            <div>
+            <div class="input-form">
                 <span class="material-icons mail-icon">lock_outline </span>
                 <input [type]="hide ? 'password' : 'text'" formControlName="password" placeholder="Password">
                 <span class="material-icons eye-icon" (click)="togglePassword()">{{ hide ? 'visibility_off'
@@ -51,3 +51,4 @@
         <button [disabled]="!modalUserForm.valid" (click)="sendUser()">Save</button>
     </form>
 </section>
+<div class="shadow" (click)="closeUserModal()"></div>

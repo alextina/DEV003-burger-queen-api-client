@@ -12,3 +12,19 @@ button:active {
     background-color: var(--main-color);
     color: var(--main-dark-color);
 }
+
+@media (max-width: 1000px) {
+
+    button {
+        font-size: 0;
+        gap: 0;
+        width: auto;
+        height: 65px;
+        border-radius: 20px;
+    }
+
+    button .material-icons {
+        font-size: 30px;
+    }
+
+}

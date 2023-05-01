@@ -1,8 +1,8 @@
 <section>
-    <div>
+    <div class="add-product">
         <button (click)="openProductModal()"><span class="material-icons">add_shopping_cart</span>Add product</button>
     </div>
-    <div>
+    <div class="products-content">
         <h2>Breakfast</h2>
         <section>
             <article *ngFor="let product of breakfast">
@@ -14,7 +14,7 @@
             </article>
         </section>
     </div>
-    <div>
+    <div class="products-content">
         <h2>Lunch</h2>
         <section>
             <article *ngFor="let product of lunch">

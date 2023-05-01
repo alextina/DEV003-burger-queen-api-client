@@ -1,8 +1,8 @@
 <section>
-    <div>
+    <div class="add-user">
         <button (click)="openUserModal()"><span class="material-icons">person_add</span>Add user</button>
     </div>
-    <div>
+    <div class="users-content">
         <h2>Waiters</h2>
         <section>
             <article *ngFor="let user of waiter">
@@ -14,7 +14,7 @@
             </article>
         </section>
     </div>
-    <div>
+    <div class="users-content">
         <h2>Chefs</h2>
         <section>
             <article *ngFor="let user of chef">
@@ -26,7 +26,7 @@
             </article>
         </section>
     </div>
-    <div>
+    <div class="users-content">
         <h2>Admins</h2>
         <section>
             <article *ngFor="let user of admin">

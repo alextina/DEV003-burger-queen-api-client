@@ -1,10 +1,10 @@
 <app-header></app-header>
-<section>
-    <section>
+<section class="admin-container">
+    <section class="buttons-container">
         <button class="" (click)="changeByAdmin('users')">Users</button>
         <button class="" (click)="changeByAdmin('products')">Products</button>
     </section>
-    <section>
+    <section class="info-container">
         <app-users *ngIf="viewValue == 'users'"></app-users>
         <app-products *ngIf="viewValue == 'products'"></app-products>
     </section>
