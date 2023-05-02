@@ -35,4 +35,8 @@ export class HeaderComponent {
     this.router.navigate(['admin'])
   }
 
+  goToKitchen(): void {
+    this.router.navigate(['kitchen'])
+  }
+
 }

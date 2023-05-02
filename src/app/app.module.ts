@@ -8,8 +8,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { UpdatepopupComponent } from './updatepopup/updatepopup.component';
 import { KitchenComponent } from './kitchen/kitchen.component';
 import { SharedModule } from './shared/shared.module';
 
@@ -17,8 +15,6 @@ import { SharedModule } from './shared/shared.module';
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent,
-    UpdatepopupComponent,
     KitchenComponent,
   ],
 
