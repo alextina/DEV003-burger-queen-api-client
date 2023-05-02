@@ -40,4 +40,8 @@ export class ProductsService {
       this.httpOptions
     );
   }
+
+  deleteProduct(id: string): Observable<Products> {
+    return this.http.delete<Products>(`${this.apiurl}/${id}`, this.httpOptions);
+  }
 }
