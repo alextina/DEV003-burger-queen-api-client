@@ -75,7 +75,7 @@ header nav button:active {
 
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1000px) {
 
     header {
         height: auto;
@@ -85,8 +85,8 @@ header nav button:active {
 
     header h1,
     header a {
-        font-size: 50px;
-        padding: 30px;
+        font-size: 45px;
+        padding: 35px 20px;
     }
 
 }

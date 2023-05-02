@@ -2,10 +2,12 @@
     <nav>
         <button *ngIf="role == 'admin'" (click)="goToAdmin()"><span
                 class="material-icons">admin_panel_settings</span>Admin</button>
-        <button *ngIf="path == '/menu' || path == '/admin'" (click)="goToDelivering()"><span
-                class="material-icons">notifications</span>Done</button>
         <button *ngIf="path == '/delivering' || path == '/admin'" (click)="goToMenu()"><span
                 class="material-icons">restaurant_menu</span>Menu</button>
+        <button *ngIf="role == 'admin'" (click)="goToKitchen()"><span class="material-icons">soup_kitchen</span>
+            Kitchen</button>
+        <button *ngIf="path == '/menu' || path == '/admin'" (click)="goToDelivering()"><span
+                class="material-icons">notifications</span>Done</button>
         <button *ngIf="path == '/menu'" (click)="openModal()"><span class="material-icons">summarize</span>
             Order
             <div *ngIf="qty$ | async" class="notification">{{qty$ | async}}</div>
