@@ -10,6 +10,7 @@ import { ProductsComponent } from './products/products.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ModalUserComponent } from './modal-user/modal-user.component';
 import { ModalProductComponent } from './modal-product/modal-product.component';
+import { ModalDeleteComponent } from './modal-delete/modal-delete.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ModalProductComponent } from './modal-product/modal-product.component';
     UsersComponent,
     ProductsComponent,
     ModalUserComponent,
-    ModalProductComponent
+    ModalProductComponent,
+    ModalDeleteComponent
   ],
   imports: [
     CommonModule,

@@ -44,6 +44,10 @@ export class AuthService {
     );
   }
 
+  deleteUser(id: string): Observable<User> {
+    return this.http.delete<User>(`${this.apiurlUsers}/${id}`, this.httOptions);
+  }
+
   // métodos utilizados por el componente 'register'
   GetAll() {
     return this.http.get(this.apiurl);

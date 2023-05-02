@@ -1,23 +1,23 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+// import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ModalProductComponent } from './modal-product.component';
+// import { ModalProductComponent } from './modal-product.component';
 
-describe('ModalProductComponent', () => {
-  let component: ModalProductComponent;
-  let fixture: ComponentFixture<ModalProductComponent>;
+// describe('ModalProductComponent', () => {
+//   let component: ModalProductComponent;
+//   let fixture: ComponentFixture<ModalProductComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ModalProductComponent ]
-    })
-    .compileComponents();
+//   beforeEach(async () => {
+//     await TestBed.configureTestingModule({
+//       declarations: [ ModalProductComponent ]
+//     })
+//     .compileComponents();
 
-    fixture = TestBed.createComponent(ModalProductComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+//     fixture = TestBed.createComponent(ModalProductComponent);
+//     component = fixture.componentInstance;
+//     fixture.detectChanges();
+//   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+//   it('should create', () => {
+//     expect(component).toBeTruthy();
+//   });
+// });

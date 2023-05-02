@@ -15,32 +15,29 @@ class ProductsTestingService {
   getProducts(): Observable<Products[]> {
     return of([
       {
-        _id: '1',
+        id: '1',
         name: 'American Coffe',
         price: 5,
-        image: new URL(
-          'https://raw.githubusercontent.com/MariCornelio/burger-queen-server-mock/main/resources/images/american-coffee.png'
-        ),
+        image:
+          'https://raw.githubusercontent.com/MariCornelio/burger-queen-server-mock/main/resources/images/american-coffee.png',
         type: 'breakfast',
         dateEntry: new Date(2023, 3, 4),
       },
       {
-        _id: '2',
+        id: '2',
         name: 'Coffee with Milk',
         price: 7,
-        image: new URL(
-          'https://raw.githubusercontent.com/MariCornelio/burger-queen-server-mock/main/resources/images/coffee-and-milk.png'
-        ),
+        image:
+          'https://raw.githubusercontent.com/MariCornelio/burger-queen-server-mock/main/resources/images/coffee-and-milk.png',
         type: 'breakfast',
         dateEntry: new Date(2023, 3, 4),
       },
       {
-        _id: '5',
+        id: '5',
         name: 'Plain Burger',
         price: 10,
-        image: new URL(
-          'https://raw.githubusercontent.com/MariCornelio/burger-queen-server-mock/main/resources/images/plain-burger.png'
-        ),
+        image:
+          'https://raw.githubusercontent.com/MariCornelio/burger-queen-server-mock/main/resources/images/plain-burger.png',
         type: 'lunch',
         dateEntry: new Date(2023, 3, 4),
       },
@@ -110,12 +107,11 @@ describe('MenuComponent', () => {
 
   it('onClick should call the onClickAddToProduct function with the product parameter', () => {
     const product: Products = {
-      _id: '1',
+      id: '1',
       name: 'American Coffe',
       price: 5,
-      image: new URL(
-        'https://raw.githubusercontent.com/MariCornelio/burger-queen-server-mock/main/resources/images/american-coffee.png'
-      ),
+      image:
+        'https://raw.githubusercontent.com/MariCornelio/burger-queen-server-mock/main/resources/images/american-coffee.png',
       type: 'breakfast',
       dateEntry: new Date(2023, 3, 4),
     };
