@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
-import { User } from 'src/app/interfaces/users.interface';
 import { AuthService } from 'src/app/service/auth.service';
 import { SharedAdminService } from 'src/app/service/shared-admin.service';
 import { SharedOrderService } from 'src/app/service/shared-order.service';

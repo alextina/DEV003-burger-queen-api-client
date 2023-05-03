@@ -8,12 +8,12 @@ import { User } from '../interfaces/users.interface';
 })
 export class AuthService {
   // declarando dependencias que usaremos en la clase
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
   // Declarando e inicializando variable apiurl que se usará para consultar a json-server-auth
-  // apiurl: string = 'https://burger-queen-server-mock-21hr.onrender.com/login';
-  // apiurlUsers: string = 'https://burger-queen-server-mock-21hr.onrender.com/users';
-  apiurl: string = 'http://localhost:8080/login';
-  apiurlUsers: string = 'http://localhost:8080/users';
+  apiurl: string = 'https://burger-queen-server-mock-21hr.onrender.com/login';
+  apiurlUsers: string = 'https://burger-queen-server-mock-21hr.onrender.com/users';
+  // apiurl: string = 'http://localhost:8080/login';
+  // apiurlUsers: string = 'http://localhost:8080/users';
   httOptions = {
     headers: new HttpHeaders({
       Authorization: 'Bearer ' + sessionStorage.getItem('token'),

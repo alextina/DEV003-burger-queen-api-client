@@ -20,7 +20,7 @@ export class ProductsComponent implements OnInit {
     private productSvc: ProductsService,
     private sharedOrderSvc: SharedOrderService,
     private sharedAdminSvc: SharedAdminService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.productSvc.getProducts().subscribe({
@@ -43,9 +43,16 @@ export class ProductsComponent implements OnInit {
     this.sharedOrderSvc.$modalProduct.emit(true);
     this.sharedAdminSvc.updateProduct(false);
   }
+
   onClickProductEdit(product: Products): void {
     this.sharedOrderSvc.$modalProduct.emit(true);
     this.sharedAdminSvc.addToProduct(product);
     this.sharedAdminSvc.updateProduct(true);
   }
+
+  openModalDelete(product: Products, value: string): void {
+    this.sharedAdminSvc.$modalDelete.emit(true);
+    this.sharedAdminSvc.addingProductToDelete(product, value);
+  }
+
 }

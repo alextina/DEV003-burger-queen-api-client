@@ -9,7 +9,8 @@
                 <h3>{{product.name}}</h3>
                 <div>
                     <button (click)="onClickProductEdit(product)"><span class="material-icons">edit</span>Edit</button>
-                    <button><span class="material-icons">delete</span>Delete</button>
+                    <button (click)="openModalDelete(product, 'product')"><span
+                            class="material-icons">delete</span>Delete</button>
                 </div>
             </article>
         </section>
@@ -21,7 +22,8 @@
                 <h3>{{product.name}}</h3>
                 <div>
                     <button (click)="onClickProductEdit(product)"><span class="material-icons">edit</span>Edit</button>
-                    <button><span class="material-icons">delete</span>Delete</button>
+                    <button (click)="openModalDelete(product, 'product')"><span
+                            class="material-icons">delete</span>Delete</button>
                 </div>
             </article>
         </section>
