@@ -7,8 +7,8 @@ import { Products } from '../interfaces/products.interface';
   providedIn: 'root',
 })
 export class SharedAdminService {
-  // $updateUser = new EventEmitter<boolean>();
-  constructor() {}
+  $modalDelete = new EventEmitter<boolean>();
+  constructor() { }
   private userSubject = new BehaviorSubject<User>({
     name: '',
     email: '',
@@ -26,6 +26,12 @@ export class SharedAdminService {
 
   private updateProductSubject = new BehaviorSubject<boolean>(false);
 
+  private modalDeleteSubject = new BehaviorSubject<any>({
+    id: '',
+    name: '',
+    data: '',
+  })
+
   get user$(): Observable<User> {
     return this.userSubject.asObservable();
   }
@@ -42,6 +48,10 @@ export class SharedAdminService {
     return this.updateProductSubject.asObservable();
   }
 
+  get modalDelete$(): Observable<any> {
+    return this.modalDeleteSubject.asObservable();
+  }
+
   addUser(user: User): void {
     this.userSubject.next(user);
   }
@@ -56,6 +66,16 @@ export class SharedAdminService {
 
   updateProduct(value: boolean): void {
     this.updateProductSubject.next(value);
+  }
+
+  addingUserToDelete(user: User, data: string): void {
+    const { id, name } = user;
+    this.modalDeleteSubject.next({ id, name, data });
+  }
+
+  addingProductToDelete(product: Products, data: string): void {
+    const { id, name } = product;
+    this.modalDeleteSubject.next({ id, name, data });
   }
 
   resetUser(): void {
@@ -76,4 +96,13 @@ export class SharedAdminService {
       type: 'type',
     });
   }
+
+  resetModalDelete(): void {
+    this.modalDeleteSubject.next({
+      id: '',
+      name: '',
+      data: '',
+    })
+  }
+
 }

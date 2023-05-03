@@ -23,7 +23,14 @@
     border-radius: 25px;
 }
 
-button {
+.active-button {
     background-color: var(--main-color);
+    width: 200px;
+}
+
+.inactive-button {
+    background-color: var(--second-dark-color);
+    border: solid 1px var(--main-light-color);
+    color: var(--main-light-color);
     width: 200px;
 }

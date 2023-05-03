@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { filter } from 'rxjs';
+import { Products } from 'src/app/interfaces/products.interface';
 import { User } from 'src/app/interfaces/users.interface';
 import { AuthService } from 'src/app/service/auth.service';
 import { SharedAdminService } from 'src/app/service/shared-admin.service';
@@ -21,8 +22,8 @@ export class UsersComponent implements OnInit {
     private toastr: ToastrService,
     private userSvc: AuthService,
     private sharedOrderSvc: SharedOrderService,
-    private sharedAdminSvc: SharedAdminService
-  ) {}
+    private sharedAdminSvc: SharedAdminService,
+  ) { }
 
   ngOnInit() {
     console.log('cargo el app-user');
@@ -58,4 +59,10 @@ export class UsersComponent implements OnInit {
     this.sharedAdminSvc.addUser(user);
     this.sharedAdminSvc.updateUser(true);
   }
+
+  openModalDelete(user: User, value: string): void {
+    this.sharedAdminSvc.$modalDelete.emit(true);
+    this.sharedAdminSvc.addingUserToDelete(user, value);
+  }
+
 }

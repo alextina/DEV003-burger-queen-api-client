@@ -14,13 +14,17 @@ header {
     top: 0;
 }
 
-header h1,
-header a {
+.full-logo {
+    display: block;
     color: var(--main-light-color);
     font-weight: 800;
     padding: 20px;
     font-size: 75px;
     line-height: 1;
+}
+
+.short-logo {
+    display: none;
 }
 
 header nav {
@@ -83,10 +87,17 @@ header nav button:active {
         justify-content: left;
     }
 
-    header h1,
-    header a {
-        font-size: 45px;
-        padding: 35px 20px;
+    .short-logo {
+        display: block;
+        color: var(--main-light-color);
+        font-weight: 800;
+        padding: 20px 50px;
+        font-size: 75px;
+        line-height: 1;
+    }
+
+    .full-logo {
+        display: none;
     }
 
 }
