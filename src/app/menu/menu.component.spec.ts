@@ -120,4 +120,10 @@ describe('MenuComponent', () => {
     component.onClick(product);
     expect(orderSvc.onClickAddProduct).toHaveBeenCalledWith(product);
   });
+
+  it('resetNameNameTableMenu must reset the client and table variables', () => {
+    component.resetNameTableMenu();
+    expect(component.client).toBe('');
+    expect(component.table).toBe(null);
+  });
 });
