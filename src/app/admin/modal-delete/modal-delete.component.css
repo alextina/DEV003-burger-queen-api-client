@@ -1,0 +1,40 @@
+.modal-delete {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    background-color: var(--main-light-color);
+    border-radius: 25px;
+    position: fixed;
+    top: 35%;
+    right: 25%;
+    width: 50%;
+    padding: 2.5%;
+    gap: 25px;
+}
+
+.modal-delete h3 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.modal-delete div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 25px
+}
+
+button {
+    background-color: var(--main-color);
+}
+
+@media (max-width: 1000px) {
+
+    .modal-delete div {
+        flex-direction: column;
+    }
+
+}

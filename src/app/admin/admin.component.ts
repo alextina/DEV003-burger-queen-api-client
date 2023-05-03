@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { SharedOrderService } from '../service/shared-order.service';
-import { User } from '../interfaces/users.interface';
 import { SharedAdminService } from '../service/shared-admin.service';
 
 @Component({

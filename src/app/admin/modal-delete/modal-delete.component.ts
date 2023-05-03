@@ -20,10 +20,17 @@ export class ModalDeleteComponent {
 
   modalDelete$ = this.sharedAdminSvc.modalDelete$;
   dataToDelete: any;
+  modalName: any;
 
   closeModalDelete(): void {
     this.sharedAdminSvc.$modalDelete.emit(false);
     this.sharedAdminSvc.resetModalDelete();
+  }
+
+  ngOnInit() {
+    this.modalDelete$.subscribe((res) => {
+      this.modalName = `"${res.name}"`;
+    })
   }
 
   confirmDelete(): void {
