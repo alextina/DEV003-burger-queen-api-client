@@ -1,7 +1,8 @@
-<section>
-    <h3>Are you sure you want to delete this product/user?</h3>
+<section class="modal-delete">
+    <h3>Are you sure you want to delete {{modalName}}?</h3>
     <div>
         <button (click)="confirmDelete()">Yes, delete it!</button>
         <button (click)="closeModalDelete()">No, cancel it!</button>
     </div>
 </section>
+<div class="shadow"></div>

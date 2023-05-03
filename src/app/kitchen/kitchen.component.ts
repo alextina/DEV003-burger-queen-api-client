@@ -2,7 +2,6 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { OrderService } from '../service/order.service';
 import { Order } from '../interfaces/order.interface';
-import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-kitchen',
@@ -15,7 +14,7 @@ export class KitchenComponent implements OnInit {
   constructor(
     private orderHttpSvc: OrderService,
     private toastr: ToastrService
-  ) {}
+  ) { }
 
   getPending(): void {
     this.orderHttpSvc.getOrder('pending').subscribe({
