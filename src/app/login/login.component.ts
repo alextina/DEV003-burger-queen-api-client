@@ -40,7 +40,6 @@ export class LoginComponent {
     // accediendo al método "methodLogin" de la clase AuthService (app/service/auth.service.ts)donde accede a su método subscribe (El cual estará atento a cualquier emisión de datos que produzca ese servicio) que recide un objeto con los métodos next y error y se ejecutarán segun la respuesta del servidor
     this.service.methodLogin(formData.email, formData.password).subscribe({
       next: (res) => {
-        console.log(res.accessToken);
         // Creando la variable "token" en sessionStorage con el valor de la propiedad accessToken del objeto de respuesta
         sessionStorage.setItem('token', res.accessToken);
         sessionStorage.setItem('idUser', res.user.id);
