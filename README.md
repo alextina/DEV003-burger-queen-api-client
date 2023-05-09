@@ -1,6 +1,6 @@
 ![burger-queen](/assets-readme/burger-queen-readme.png)
 
-Para ingresar a la aplicación y poder utilizar y verificar la funcionalidad de la aplicación web, ingresa a este link: [https://dev-003-burger-queen-api-client-iota.vercel.app/](https://dev-003-burger-queen-api-client-iota.vercel.app/), con los siguientes accesos: 
+Para ingresar a la aplicación web, utilizarla y verificar su funcionalidad, ingresa a este link: [https://dev-003-burger-queen-api-client-iota.vercel.app/](https://dev-003-burger-queen-api-client-iota.vercel.app/), con los siguientes accesos: 
 
 |Mesero                   |Chef (no tiene ordenes)|Admin                  |
 |-------------------------|-----------------------|-----------------------|
