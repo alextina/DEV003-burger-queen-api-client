@@ -55,7 +55,7 @@ Esta es la información que tenemos del cliente:
 > |Bebida/gaseosa 650ml       |     7|
 > |Bebida/gaseosa 750ml       |     10|
 >
-> Nuestrxs clientxs son bastante indecisos, por lo que es muy común que cambien
+> Nuestros clientes son bastante indecisos, por lo que es muy común que cambien
 > el pedido varias veces antes de finalizarlo.
 
 La interfaz debe mostrar los dos menús (desayuno y almuerzo), cada uno con todos sus productos. La usuaria debe poder ir eligiendo qué productos agregar y la interfaz debe ir mostrando el resumen del pedido con el costo total.
@@ -150,7 +150,7 @@ Algunos resultados:
 <img src="./assets-readme/resultado-4.png" name="Resultado 4" width="650px"></img>
 <img src="./assets-readme/resultado-5.png" name="Resultado 5" width="650px"></img>
 
-**También, no sindicaron como recomendación:**
+**También, nos indicaron como recomendación:**
 
 * Que los inputs del nombre y mesa del cliente estén arriba.
 * Que se vea el menú de navegación en todo momento, para saber que se agregan productos al carrito.
