@@ -3,7 +3,6 @@ import { ToastrService } from 'ngx-toastr';
 import { ProductsService } from '../service/products.service';
 import { Products } from '../interfaces/products.interface';
 import { SharedOrderService } from '../service/shared-order.service';
-import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-menu',
@@ -27,7 +26,7 @@ export class MenuComponent implements OnInit {
     private toastr: ToastrService,
     private service: ProductsService,
     private orderSvc: SharedOrderService
-  ) {}
+  ) { }
 
   //método que se carga al iniciar el componente
   ngOnInit() {

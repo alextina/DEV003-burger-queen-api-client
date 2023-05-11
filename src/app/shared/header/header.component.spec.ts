@@ -1,23 +1,47 @@
-// import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-// import { HeaderComponent } from './header.component';
+import { HeaderComponent } from './header.component';
+import { SharedOrderService } from 'src/app/service/shared-order.service';
+import { EventEmitter } from '@angular/core';
+import { SharedModule } from '../shared.module';
 
-// describe('HeaderComponent', () => {
-//   let component: HeaderComponent;
-//   let fixture: ComponentFixture<HeaderComponent>;
+class SharedOrderTestingService {
+    $modal = new EventEmitter<any>();
+}
 
-//   beforeEach(async () => {
-//     await TestBed.configureTestingModule({
-//       declarations: [ HeaderComponent ]
-//     })
-//     .compileComponents();
+describe('HeaderComponent', () => {
+    let component: HeaderComponent;
+    let fixture: ComponentFixture<HeaderComponent>;
+    let sharedOrderSvc: SharedOrderService;
 
-//     fixture = TestBed.createComponent(HeaderComponent);
-//     component = fixture.componentInstance;
-//     fixture.detectChanges();
-//   });
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            imports: [SharedModule],
+            declarations: [HeaderComponent],
+            providers: [
+                { provide: SharedOrderService, useClass: SharedOrderTestingService },
+            ]
+        })
+            .compileComponents();
 
-//   it('should create', () => {
-//     expect(component).toBeTruthy();
-//   });
-// });
+        fixture = TestBed.createComponent(HeaderComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+
+        sharedOrderSvc = TestBed.inject(SharedOrderService);
+
+    });
+
+    it('should create', () => {
+        expect(component).toBeTruthy();
+        expect(component).toBeDefined();
+    });
+
+    it('openModal() should emit true.', () => {
+        // sharedOrderSvc.$modal.emit(true);
+        spyOn(sharedOrderSvc.$modal, 'emit').and.callThrough();
+        component.openModal();
+        expect(sharedOrderSvc.$modal.emit).toHaveBeenCalledWith(true);
+    });
+
+});
