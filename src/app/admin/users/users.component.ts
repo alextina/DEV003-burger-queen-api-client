@@ -1,7 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { filter } from 'rxjs';
-import { Products } from 'src/app/interfaces/products.interface';
 import { User } from 'src/app/interfaces/users.interface';
 import { AuthService } from 'src/app/service/auth.service';
 import { SharedAdminService } from 'src/app/service/shared-admin.service';
