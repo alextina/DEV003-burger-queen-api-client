@@ -11,7 +11,7 @@ export class ProductsService {
   constructor(private http: HttpClient) { }
   // Declarando e inicializando la variable apiurl
   private apiurl: string =
-    'https://burger-queen-server-mock-21hr.onrender.com/products';
+    'https://alextina-burger-queen-mock-server.onrender.com/products';
   // private apiurl: string = 'http://localhost:8080/products';
 
   httpOptions = {

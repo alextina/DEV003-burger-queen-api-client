@@ -1,11 +1,11 @@
 ![burger-queen](/assets-readme/burger-queen-readme.png)
 
-Para ingresar a la aplicación web, utilizarla y verificar su funcionalidad, ingresa a este link: [https://dev-003-burger-queen-api-client-iota.vercel.app/](https://dev-003-burger-queen-api-client-iota.vercel.app/), con los siguientes accesos: 
+Para ingresar a la aplicación web, utilizarla y verificar su funcionalidad, ingresa a este link: [https://alextina-burger-queen-api-client.vercel.app/](https://alextina-burger-queen-api-client.vercel.app/), con los siguientes accesos: 
 
-|Mesero                   |Chef (no tiene ordenes)|Admin                  |
-|-------------------------|-----------------------|-----------------------|
-|email: waiter1@gmail.com |email: chef1@gmail.com |admin@gmail.com        |
-|contraseña: 123456       |contraseña: 123456     |contraseña: 123456     |
+|Admin                    |Mesero                   |Chef (no tiene pedidos)|
+|-------------------------|-------------------------|-----------------------|
+|email: admin@gmail.com   |email: waiter1@gmail.com |chef1@gmail.com        |
+|contraseña: 123456       |contraseña: 123456       |contraseña: 123456     |
 
 ## Índice
 
