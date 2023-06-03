@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
+  // loader
+  loading: boolean = false;
   // declarando variables
   loginForm: FormGroup;
   // declarando-inicializando en  true = visibility_off
@@ -34,6 +36,9 @@ export class LoginComponent {
   }
 
   onSubmit(): void {
+    // loader
+    this.loading = true;
+
     // objeto formData con propiedades email y password
     const formData = this.loginForm.value;
 

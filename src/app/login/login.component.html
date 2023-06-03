@@ -1,3 +1,6 @@
+<div *ngIf="loading" class="loader-overlay">
+  <div class="loader"></div>
+</div>
 <section class="container">
   <section class="background-image">
     <div *ngFor="let image of images" [style.background-image]="'url(' + image + ')'"></div>
